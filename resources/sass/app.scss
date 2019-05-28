@@ -1,3 +1,16 @@
 /*!
- * UI Kit.team
+ * Control panel UI
  */
+
+ //
+ // Table of content:
+ //
+ // Tools........... Control panel scss mixins & functions
+
+ //
+ // TOOLS
+ //
+ @import "tools/tools.rem";
+ @import "tools/tools.clearfix";
+ @import "tools/tools.linear-gradient";
+ @import "tools/tools.respond-to";
