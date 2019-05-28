@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('title', 'Вход для клиентов | '. config('app.name'))
 @section('body.class', 'page page--center')
 
 @section('content')
@@ -36,10 +37,10 @@
                 @endif
             </div>
 
-            <div class="choice choice--checkbox">
+            {{--<div class="choice choice--checkbox">
                 <input class="choice__input" id="remember" name="remember" type="checkbox" {{ old('remember') ? 'checked' : '' }}>
                 <label class="choice__label" for="remember">Запомнить</label>
-            </div>
+            </div>--}}
 
             <button class="btn btn--info btn--fullwidth" type="submit">Войти</button>
 
