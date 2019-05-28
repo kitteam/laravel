@@ -1,0 +1,154 @@
+// sass-lint:disable no-important
+
+//
+// UNDER DEVELOPMENT: Generate these clases using scss methods
+//
+
+/**
+ * Set the text color of elements.
+ */
+
+.color-success {
+	color: $color-success !important;
+}
+
+.color-info {
+	color: $color-info !important;
+}
+
+.color-danger {
+	color: $color-danger !important;
+}
+
+.color-warning  {
+	color: $color-warning !important;
+}
+
+.color-primary {
+	color: $heading-color !important;
+}
+
+.color-secondary {
+	color: $white !important;
+}
+
+.color-white {
+	color: $white !important;
+}
+
+
+/**
+  * Set the background color of elements.
+  */
+
+.bg-success {
+	background: $green-200 !important;
+	background-color: $green-200 !important;
+}
+
+.bg-info {
+	background: $blue-500 !important;
+	background-color: $blue-500 !important;
+}
+
+.bg-danger {
+	background: $red-400 !important;
+	background-color: $red-400 !important;
+}
+
+.bg-fancy {
+	background: $purple-200 !important;
+	background-color: $purple-200 !important;
+}
+
+.bg-warning {
+	background: $orange-300 !important;
+	background-color: $orange-300 !important;
+}
+
+.bg-primary {
+	background: $gunmetal-100 !important;
+	background-color: $gunmetal-100 !important;
+}
+
+.bg-secondary {
+	background: $secondary-background-color !important;
+	background-color: $secondary-background-color !important;
+}
+
+.bg-white {
+	background: $white !important;
+	background-color: $white !important;
+}
+
+
+/**
+  * Use brand-color utilities to apply text colors and background colors to
+  * brand-related components like social icons.
+  */
+
+/**
+ * Brand text colors
+ */
+
+.color-facebook {
+	color:  $color-facebook !important;
+}
+
+.color-twitter {
+	color:  $color-twitter !important;
+}
+
+.color-pinterest {
+	color:  $color-pinterest !important;
+}
+
+.color-behance {
+	color: $color-behance !important;
+}
+
+.color-dribbble {
+	color: $color-dribbble !important;
+}
+
+.color-linkedin {
+	color: $color-linkedin !important;
+}
+
+
+/**
+ * Brand background colors
+ *
+ * 1. If a component has border, we change its border-color to match with
+ *    the brand background-color.
+ */
+
+.bg-facebook {
+	border-color: $color-facebook !important; /* [1] */
+	background:  $color-facebook !important;
+}
+
+.bg-twitter {
+	border-color: $color-twitter !important;
+	background:  $color-twitter !important;
+}
+
+.bg-pinterest {
+	border-color: $color-pinterest !important;
+	background:  $color-pinterest !important;
+}
+
+.bg-behance {
+	border-color: $color-behance !important;
+	background: $color-behance !important;
+}
+
+.bg-dribbble {
+	border-color: $color-dribbble !important;
+	background: $color-dribbble !important;
+}
+
+.bg-linkedin {
+	border-color: $color-linkedin;
+	background-color: $color-linkedin !important;
+}

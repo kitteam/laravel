@@ -8,6 +8,8 @@
  // Tools........... Control panel scss mixins & functions
  // Settings........ Control panel scss variables
  // Base............ Resets, bare elements styling
+
+ // Utilities....... Helper classes e.g. display utilities
  //
 
  //
@@ -28,9 +30,30 @@
 
  // Control panel Settings
 
+ @import "tools/tools.scrollbar";
+
 
  //
  // BASE
  //
  @import "base/base.global";
  @import "base/base.typography";
+
+
+
+ //
+ // UTILITIES
+ //
+ @import "utilities/utilities.typography";
+ @import "utilities/utilities.floats";
+ @import "utilities/utilities.clearfix";
+ @import "utilities/utilities.spacing";
+ @import "utilities/utilities.colors";
+ @import "utilities/utilities.display";
+ @import "utilities/utilities.borders";
+ @import "utilities/utilities.flex";
+ @import "utilities/utilities.responsive";
+ @import "utilities/utilities.opacity";
+ @import "utilities/utilities.sizes";
+ @import "utilities/utilities.overflow";
+ @import "utilities/utilities.bootstrap";

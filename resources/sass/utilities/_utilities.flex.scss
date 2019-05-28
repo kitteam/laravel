@@ -1,0 +1,108 @@
+// sass-lint:disable no-important
+
+//
+// Table of content:
+//
+// 1. Flex display
+// 2. Justify content
+// 3. Align items
+// 4. Align self
+// 5. Flex wrap
+//
+
+//
+// 1. Flex display
+//
+
+.flex {
+	display: flex !important;
+}
+
+.inline-flex {
+	display: inline-flex !important;
+}
+
+//
+// 2. Justify content
+//
+
+.justify-start {
+	justify-content: flex-start !important;
+}
+
+.justify-end {
+	justify-content: flex-end !important;
+}
+
+.justify-center {
+	justify-content: center !important;
+}
+
+.justify-between {
+	justify-content: space-between !important;
+}
+
+.justify-around {
+	justify-content: space-around !important;
+}
+
+//
+// 3. Align items
+//
+
+.align-items-start {
+	align-items: flex-start !important;
+}
+
+.align-items-end {
+	align-items: flex-end !important;
+}
+
+.align-items-center {
+	align-items: center !important;
+}
+
+.align-items-baseline {
+	align-items: baseline !important;
+}
+
+.align-items-stretch {
+	align-items: stretch !important;
+}
+
+//
+// 4. Align self
+//
+
+.align-self-start {
+	align-self: flex-start !important;
+}
+
+.align-self-end {
+	align-self: flex-end !important;
+}
+
+.align-self-center {
+	align-self: center !important;
+}
+
+.align-self-baseline {
+	align-self: baseline !important;
+}
+
+.align-self-stretch {
+	align-self: stretch !important;
+}
+
+
+//
+// 5. Flex wrap
+//
+
+.flex-wrap {
+	flex-wrap: wrap !important;
+}
+
+.flex-nowrap {
+	flex-wrap: nowrap !important;
+}
