@@ -6,6 +6,9 @@
  // Table of content:
  //
  // Tools........... Control panel scss mixins & functions
+ // Settings........ Control panel scss variables
+ // Base............ Resets, bare elements styling
+ //
 
  //
  // TOOLS
@@ -14,3 +17,20 @@
  @import "tools/tools.clearfix";
  @import "tools/tools.linear-gradient";
  @import "tools/tools.respond-to";
+
+
+ //
+ // SETTINGS
+ //
+
+ // Global Settings
+ @import "settings/settings.global";
+
+ // Control panel Settings
+
+
+ //
+ // BASE
+ //
+ @import "base/base.global";
+ @import "base/base.typography";
