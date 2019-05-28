@@ -55,7 +55,7 @@ class LoginController extends Controller
                 unset($data['id']);
                 if ($user = User::create($data)) {
                     DB::table('temp_users')->where('email', $credentials['email'])->delete();
-                    $user->markEmailAsVerified();
+                    //$user->markEmailAsVerified();
                 }
             }
         }

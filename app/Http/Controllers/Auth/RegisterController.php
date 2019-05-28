@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Carbon\Carbon;
 
+use App\Events\Auth\UserRegistered;
+use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
+
 class RegisterController extends Controller
 {
     /*
@@ -83,5 +87,33 @@ class RegisterController extends Controller
         ]);
 
         return TempUser::where('email', $data['email'])->first();
+    }
+
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        //$this->guard()->login($user);
+
+        return $this->registered($request, $user)
+                        ?: redirect($this->redirectPath());
+    }
+
+    protected function registered(Request $request, $user)
+    {
+        event(new UserRegistered($user, $this->password));
+
+        $this->guard()->logout();
+
+        return redirect($this->redirectPath())
+            ->withSuccess('Спасибо за регистрацию! Пароль отправлен на указанный адрес электронной почты.');
     }
 }
