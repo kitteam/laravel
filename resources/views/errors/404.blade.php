@@ -33,12 +33,12 @@
             </form>
         </div>
     </div>
-
+    @if (Route::has('home'))
     <div class="line justify-center">
-        <a class="text-mute" href="/">
-            <i class="fa fa-long-arrow-left mr-xsmall"></i> Вернуться на главную
+        <a class="text-mute" href="{{ route('home') }}">
+            Вернуться на главную
         </a>
     </div>
-
+    @endif
 </div>
 @endsection

@@ -36,6 +36,7 @@
  @import "settings/settings.buttons";
  @import "settings/settings.inputs";
  @import "settings/settings.choice";
+ @import "settings/settings.close";
  @import "settings/settings.field";
 
  @import "tools/tools.scrollbar";
@@ -51,6 +52,7 @@
  // VENDORS
  //
  @import "vendor/bootstrap-grid";
+ @import "vendor/fontawesome";
 
  //
  // OBJECTS
@@ -71,6 +73,7 @@
  @import "components/components.inputs";
  @import "components/components.field";
  @import "components/components.choice";
+ @import "components/components.close";
 
  //
  // UTILITIES
