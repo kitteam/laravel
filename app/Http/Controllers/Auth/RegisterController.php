@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
+use DB;
 use App\User;
+use App\TempUser;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Carbon\Carbon;
 
 class RegisterController extends Controller
 {
@@ -27,7 +31,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.
@@ -50,7 +54,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            //'password' => 'required|string|min:6|confirmed',
         ]);
     }
 
@@ -62,10 +66,22 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $this->password = str_random(8);
+
+        // Проверяем наличие зарегистрированного пользователя
+        if (($user = User::where(['email' => $data['email']])->get()) && $user->get('email')) {
+            return $user;
+        }
+
+        DB::table('temp_users')->updateOrInsert(['email' => $data['email']], [
+        //return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            //'password' => Hash::make($data['password']),
+            'password' => Hash::make($this->password),
+            'created_at' => Carbon::now()
         ]);
+
+        return TempUser::where('email', $data['email'])->first();
     }
 }
