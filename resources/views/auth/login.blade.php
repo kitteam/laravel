@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('body.class', 'page page--center')
+
 @section('content')
 <div class="page__card">
     <div class="card mb-xsmall">
@@ -49,7 +51,7 @@
         </form>
     </div>
 
-    <div class="o-line">
+    <div class="line">
     @if (Route::has('register'))
         <a class="text-mute text-small" href="{{ route('register') }}">Ещё нет аккаунта? Зарегистрируйтесь</a>
     @endif

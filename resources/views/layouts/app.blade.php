@@ -13,7 +13,7 @@
     <!-- Stylesheet -->
     <link href="{{ asset('css/app.css') }}?{{ time() }}" rel="stylesheet">
 </head>
-<body>
+<body class="@yield('body.class', '')">
     @yield('content')
 
     <!-- Scripts -->
