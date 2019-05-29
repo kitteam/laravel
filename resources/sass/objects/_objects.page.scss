@@ -1,9 +1,5 @@
-/* ==========================================================================
-   #PAGE OBJECT
-   ========================================================================== */
-
 /**
- * Use `o-page` to strucutre your page layout into sidebar, main content.
+ * Use `page` to strucutre your page layout into sidebar, main content.
  */
 
 .page {
@@ -13,7 +9,7 @@
 
 
 /**
- * Used with `o-page__card` for better alignment.
+ * Used with `page__card` for better alignment.
  */
 
 .page--center {
@@ -53,7 +49,7 @@
 /**
  * Page content is pushed to the right to provide space for the sidebar.
  *
- * 1. Must equal the width of the `o-sidebar`.
+ * 1. Must equal the width of the `sidebar`.
  */
 
 .page__content {

@@ -1,0 +1,86 @@
+/**
+ * The site's main page header, used as a wrapper for its sub-components.
+ */
+
+.navbar {
+	display: flex;
+	position: relative;
+	flex-wrap: wrap;
+	align-items: center;
+	width: 100%;
+	min-width: 100%;
+	min-height: $navbar-height;
+	padding: $navbar-padding;
+	border-bottom: $navbar-border-width solid $navbar-border-color;
+	background-color: $navbar-background-color;
+
+	@include respond-to($breakpoint-tablet){
+		padding: $spacer-xsmall $spacer-small;
+	}
+}
+
+
+/**
+ * Set a fixed width for search input when placed in navbar.
+ */
+
+.navbar__search {
+	width: 270px !important;
+}
+
+/**
+ * 1. Custom width, height is specififed for proper alignment, adding your own
+ *    brand/logo image will require custom styles for proper alignment.
+ * 2. On small screens, seperate logo/brand from other navbar components as
+ *    navbar links would be collapsed.
+ */
+
+.navbar__brand {
+	display: inline-block;
+	width: $navbar-brand-width; /* [1] */
+	height: $navbar-brand-height; /* [1] */
+	margin: $navbar-brand-margin;
+
+	@include respond-to($breakpoint-tablet){
+		margin-right: auto; /* [2] */
+	}
+}
+
+.navbar__title {
+	margin: 0;
+	padding: 0;
+	font-size: $h5-font-size;
+}
+
+
+/* Style variants
+   ========================================================================== */
+
+/**
+ * Use `navbar--inverse` for dark background colors.
+ *
+ */
+
+.navbar--inverse {
+	@include linear-gradient(to bottom, $blue-300, $blue-400);
+
+	.nav,
+	.nav__item {
+		border-color: $blue-200;
+	}
+
+	.nav__link {
+		color: $white;
+	}
+
+	.avatar.has-dropdown::after {
+		color: $white;
+	}
+
+	.nav-toggle__icon,
+	.nav-toggle__icon::before,
+	.nav-toggle__icon::after {
+		background-color: $base-background-color;
+		opacity: 0.95;
+	}
+}

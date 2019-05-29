@@ -38,6 +38,9 @@
  @import "settings/settings.choice";
  @import "settings/settings.close";
  @import "settings/settings.field";
+ @import "settings/settings.scrollbar";
+ @import "settings/settings.nav";
+ @import "settings/settings.navbar";
 
  @import "tools/tools.scrollbar";
 
@@ -74,6 +77,11 @@
  @import "components/components.field";
  @import "components/components.choice";
  @import "components/components.close";
+ @import "components/components.nav";
+ @import "components/components.navbar";
+
+ // Control panel components
+ @import "components/components.sidebar";
 
  //
  // UTILITIES

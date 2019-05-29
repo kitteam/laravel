@@ -94,10 +94,10 @@
 
 /**
  * Labels are used with inputs, always use labels with inputs for better
- * accesibility. Hide labels using `u-hidden-visually` to display it for
+ * accesibility. Hide labels using `hidden-visually` to display it for
  * screen readers.
  *
- * USAGE: <label class="c-field__label u-hidden-visually"></label>
+ * USAGE: <label class="field__label hidden-visually"></label>
  */
 
 .field__label {

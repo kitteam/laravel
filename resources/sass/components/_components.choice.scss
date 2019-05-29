@@ -1,13 +1,13 @@
 /**
- * Checkboxes & Radios are controlled with a simple class called `c-choice`
+ * Checkboxes & Radios are controlled with a simple class called `choice`
  * because they are similar in styling, this class is used to share same
  * styles between them.
  *
  * EXAMPLE:
  *
- * <div class="c-choice c-choice--checkbox">
- *     <input class="c-choice__input" id="custom-checkbox" type="checkbox">
- *     <label class="c-choice__label" for="custom-checkbox">Checkbox 1</label>
+ * <div class="choice choice--checkbox">
+ *     <input class="choice__input" id="custom-checkbox" type="checkbox">
+ *     <label class="choice__label" for="custom-checkbox">Checkbox 1</label>
  * </div>
  */
 
