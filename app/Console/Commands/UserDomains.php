@@ -60,7 +60,7 @@ class UserDomains extends Command
                 }
                 UserDomain::updateOrInsert(['domain' => $item['dname']], $data);
             }
-            
+
             if ($domains = array_column($items, 'dname')) {
                 UserDomain::whereNotIn('domain', $domains)->where('provider', 'reg.ru')->delete();
             }

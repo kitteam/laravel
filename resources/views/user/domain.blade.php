@@ -16,7 +16,7 @@
                   <th class="table__cell table__cell--head">Домен</th>
                   <th class="table__cell table__cell--head">Администратор</th>
                   <th class="table__cell table__cell--head">Окончание</th>
-                  <th class="table__cell table__cell--head">Стоимость</th>
+                  <th class="table__cell table__cell--head">NS сервера</th>
                   <th class="table__cell table__cell--head">Статус</th>
                   <th class="table__cell table__cell--head">
                       <span class="hidden-visually">Управление</span>
@@ -40,7 +40,9 @@
                 </td>
 
                 <td class="table__cell">
-
+                    @foreach (json_decode($collection->ns) as $ns)
+                    <span class="block">{{ $ns->ns }}</span>
+                    @endforeach
                 </td>
 
                 <td class="table__cell">

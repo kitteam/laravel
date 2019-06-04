@@ -13,7 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        'App\Console\Commands\UserDomains'
+        'App\Console\Commands\UserDomains',
+        'App\Console\Commands\NsDomains'
     ];
 
     /**
@@ -24,7 +25,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('domains:user')->withoutOverlapping()->everyTenMinutes();
+        $schedule->command('domains:user')->withoutOverlapping()->hourly();
+        $schedule->command('domains:ns')->withoutOverlapping()->hourly();
     }
 
     /**
