@@ -20,3 +20,6 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
 
 Route::get('/user', 'UserController@user')->name('user');
 Route::get('/user/domain', 'UserController@domain')->name('user.domain');
+Route::get('/user/hosting', 'UserController@hosting')->name('user.hosting');
+
+//Route::get('/test', function () { return view('test'); });
