@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@php
+//Auth::loginUsingId(4);
+@endphp
+
 @section('container')
 <div class="alert alert--info mb-medium">
     <i class="alert__icon fa fa-info-circle"></i> Личный кабинет работает в тестовом режиме.
@@ -17,11 +21,22 @@
   @if (Route::has('user.domain'))
     <h4 class="sidebar__title"><a href="{{ route('user.domain') }}">Доменные имена</a></h4>
     <ul class="sidebar__list">
-      <li class="sidebar__item">
-        <a class="sidebar__link {{ route::is('user.domain') ? 'is-active' : '' }}"
-          href="{{ route('user.domain') }}"><i class="fa mr-xsmall"></i> Список доменов
-        </a>
-      </li>
+        <li class="sidebar__item">
+            <a class="sidebar__link {{ route::is('user.domain') ? 'is-active' : '' }}"
+                href="{{ route('user.domain') }}"><i class="fa mr-xsmall"></i> Список доменов
+            </a>
+        </li>
+    </ul>
+  @endif
+
+  @if (Route::has('user.hosting'))
+    <h4 class="sidebar__title"><a href="{{ route('user.hosting') }}">Виртуальный хостинг</a></h4>
+    <ul class="sidebar__list">
+        <li class="sidebar__item">
+            <a class="sidebar__link {{ route::is('user.hosting') ? 'is-active' : '' }}"
+                href="{{ route('user.hosting') }}"><i class="fa mr-xsmall"></i>Список услуг
+            </a>
+        </li>
     </ul>
   @endif
   </div>

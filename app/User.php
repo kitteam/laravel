@@ -31,4 +31,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\UserDomain');
     }
+
+    public function hosting()
+    {
+        return $this->hasMany('App\UserHosting');
+    }
 }

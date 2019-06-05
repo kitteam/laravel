@@ -31,6 +31,12 @@ class UserController extends Controller
     public function domain()
     {
         $domains = Auth::user()->domain;
-        return view('user.domain', ['collections' => $domains]);
+        return view('user.domain', ['collections' => $domains ?: [] ]);
+    }
+
+    public function hosting()
+    {
+        $hostings = Auth::user()->hosting;
+        return view('user.hosting', ['collections' => $hostings ?: [] ]);
     }
 }
