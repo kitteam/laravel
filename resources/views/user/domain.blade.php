@@ -31,8 +31,18 @@
                     <small class="block text-mute">{{ $collection->provider }}</small>
                 </td>
 
-                <td class="table__cell">
-
+                <td class="table__cell wrap">
+                @if ($details = json_decode($collection->details))
+                    @php
+                        @$contacts = [
+                            $details->a_company ?: $details->org_r,
+                            $details->a_first_name ?
+                                $details->a_first_name .' '. $details->a_last_name : $details->person_r
+                        ];
+                        $contacts = array_diff($contacts, ['']);
+                    @endphp
+                @endif
+                    {{ implode(', ', $contacts) }}
                 </td>
 
                 <td class="table__cell">
@@ -40,9 +50,11 @@
                 </td>
 
                 <td class="table__cell">
-                    @foreach (json_decode($collection->ns) as $ns)
+                @if ($nss = json_decode($collection->ns))
+                    @foreach ($nss as $ns)
                     <span class="block">{{ $ns->ns }}</span>
                     @endforeach
+                @endif
                 </td>
 
                 <td class="table__cell">

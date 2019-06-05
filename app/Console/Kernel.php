@@ -14,7 +14,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         'App\Console\Commands\UserDomains',
-        'App\Console\Commands\NsDomains'
+        'App\Console\Commands\NsDomains',
+        'App\Console\Commands\DetailsDomains'
     ];
 
     /**
@@ -27,6 +28,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('domains:user')->withoutOverlapping()->hourly();
         $schedule->command('domains:ns')->withoutOverlapping()->hourly();
+        $schedule->command('domains:details')->withoutOverlapping()->daily();
     }
 
     /**
