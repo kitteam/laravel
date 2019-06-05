@@ -35,14 +35,23 @@
                 @if ($details = json_decode($collection->details))
                     @php
                         @$contacts = [
-                            $details->a_company ?: $details->org_r,
-                            $details->a_first_name ?
-                                $details->a_first_name .' '. $details->a_last_name : $details->person_r
+                            array_diff( [
+                                $details->a_company,
+                                $details->org_r
+                            ], ['', ' '] ),
+                            array_diff( [
+                                $details->a_first_name .' '. $details->a_last_name,
+                                $details->o_first_name_ru .' '. $details->o_last_name_ru,
+                                $details->person_r
+                            ], ['', ' '] )
                         ];
-                        $contacts = array_diff($contacts, ['']);
+                        $contacts = array_diff( [
+                            current($contacts[0]),
+                            current($contacts[1])
+                        ], ['']);
                     @endphp
-                @endif
                     {{ implode(', ', $contacts) }}
+                @endif
                 </td>
 
                 <td class="table__cell">
