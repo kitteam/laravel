@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c62f24bcf170b662c6f30817b787cb50",
-    "content-hash": "d9a1e2d76969f92243bdde4da215205c",
+    "hash": "686486e74f59c676c91dbe65bec4bd92",
+    "content-hash": "51fc926878f45927e99854cf44780808",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -644,6 +644,64 @@
                 "reg.ru"
             ],
             "time": "2019-05-30 13:02:36"
+        },
+        {
+            "name": "kitteam/vesta-api",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kitteam/vesta-api.git",
+                "reference": "21bb421182e3915ad0e2eb668daf3cddd20edc7a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kitteam/vesta-api/zipball/21bb421182e3915ad0e2eb668daf3cddd20edc7a",
+                "reference": "21bb421182e3915ad0e2eb668daf3cddd20edc7a",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.2",
+                "laravel/framework": "^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "VestaAPI\\Providers\\VestaServiceProvider"
+                    ],
+                    "aliases": {
+                        "Vesta": "VestaAPI\\Facades\\Vesta"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "VestaAPI\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Alexandr Chernyaev",
+                    "email": "bliz48rus@gmail.com"
+                },
+                {
+                    "name": "Anton Popov",
+                    "email": "a.popov@kit.team"
+                }
+            ],
+            "description": "VestaCP client for Laravel",
+            "keywords": [
+                "framework",
+                "hosting",
+                "laravel",
+                "panel",
+                "vesta"
+            ],
+            "time": "2019-03-15 15:05:53"
         },
         {
             "name": "kylekatarnls/update-helper",
