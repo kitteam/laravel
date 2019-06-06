@@ -21,5 +21,6 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
 Route::get('/user', 'UserController@user')->name('user');
 Route::get('/user/domain', 'UserController@domain')->name('user.domain');
 Route::get('/user/hosting', 'UserController@hosting')->name('user.hosting');
+Route::get('/user/hosting/{id}', 'UserController@hosting')->where('id', '[0-9]+');
 
 //Route::get('/test', function () { return view('test'); });

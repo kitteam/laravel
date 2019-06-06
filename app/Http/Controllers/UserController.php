@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\UserDomain;
+use App\UserHosting;
 use Illuminate\Http\Request;
+use Redirect;
 
 class UserController extends Controller
 {
@@ -34,8 +36,17 @@ class UserController extends Controller
         return view('user.domain', ['collections' => $domains ?: [] ]);
     }
 
-    public function hosting()
+    public function hosting($id = false)
     {
+        if ($id) {
+            if ($userHosting = UserHosting::where('user_id', Auth::user()->id)->find($id)) {
+                $url = 'https://'. $userHosting->server .'/artisan/';
+                if ($key = file_get_contents($url .'?rkey='. $userHosting->account)) {
+                    $redirect = $url .'?user='. $userHosting->account .'&token='. hash('sha256', $key);
+                    return Redirect::away($redirect);
+                }
+            }
+        }
         $hostings = Auth::user()->hosting;
         return view('user.hosting', ['collections' => $hostings ?: [] ]);
     }

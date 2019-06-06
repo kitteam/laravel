@@ -68,7 +68,12 @@
                 </td>
 
                 <td class="table__cell text-right">
-
+                    <div class="board__actions dropdown">
+                        <a class="dropdown-toggle" href="#" id="dropdwonMenuBoard{{ $collection->id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="/img/icon-dots.svg" alt="Управление"></a>
+                        <div class="dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="dropdwonMenuBoard{{ $collection->id }}">
+                            <a href="/{{ Request::path() }}/{{ $collection->id }}" class="dropdown__item" target="_blank">Управление</a>
+                        </div>
+                    </div>
                 </td>
             </tr>
         @endforeach
