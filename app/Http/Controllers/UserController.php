@@ -7,6 +7,7 @@ use App\UserDomain;
 use App\UserHosting;
 use Illuminate\Http\Request;
 use Redirect;
+use Vesta;
 
 class UserController extends Controller
 {
@@ -52,8 +53,10 @@ class UserController extends Controller
                 if ('vh1.kit.team' == $userHosting->server) {
                     $url = 'https://'. $userHosting->server .':8083/artisan/';
                 }
-                if ($key = file_get_contents($url .'?rkey='. $userHosting->account)) {
-                    $redirect = $url .'?user='. $userHosting->account .'&token='. hash('sha256', $key);
+
+                $vesta = Vesta::server($userHosting->server)->setUserName($userHosting->account);
+                if (($data = $vesta->listUserAccount()) && ($rkey = $data[$userHosting->account]['RKEY'])) {
+                    $redirect = $url .'?user='. $userHosting->account .'&token='. hash('sha256', $rkey);
                     return Redirect::away($redirect);
                 }
             }
