@@ -5,9 +5,7 @@ use Illuminate\Console\Command;
 
 use Image;
 use DB;
-use App\UserDomain;
-use App\UserHosting;
-use App\Portfolio;
+use Carbon\Carbon;
 use ATehnix\VkClient\Client as VkClient;
 use GuzzleHttp\Client as HttpClient;
 
@@ -81,6 +79,7 @@ class CoverPhotoUpload extends Command
     protected function gererateImage()
     {
         $img = Image::make(public_path('img/cover-vk.jpg'));
+        $carbon = Carbon::now()->setTimezone('Asia/Yekaterinburg');
 
         $array = [
             DB::table('user_domains')->count(),
@@ -110,6 +109,9 @@ class CoverPhotoUpload extends Command
         $img->text(mb_strtoupper($text), 876, 216, $font);
         $text = trans_choice("Разработанный\nсайт|Разработанных\nсайта|Разработанных\nсайтов", $array[2]);
         $img->text(mb_strtoupper($text), 876, 295, $font);
+
+        //$date = $carbon->isoFormat("dddd\nD MMMM G HH:mm");
+        //$img->text(mb_strtoupper($date), 60, 60, $font);
 
         return $img->encode('jpg', 100);
     }
