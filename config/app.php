@@ -168,6 +168,7 @@ return [
          * Package Service Providers...
          */
         Intervention\Image\ImageServiceProvider::class,
+        ATehnix\LaravelVkRequester\VkRequesterServiceProvider::class,
 
         /*
          * Application Service Providers...

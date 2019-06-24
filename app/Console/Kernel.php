@@ -15,7 +15,8 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         'App\Console\Commands\UserDomains',
         'App\Console\Commands\NsDomains',
-        'App\Console\Commands\DetailsDomains'
+        'App\Console\Commands\DetailsDomains',
+        'App\Console\Commands\CoverPhotoUpload',
     ];
 
     /**
@@ -29,6 +30,8 @@ class Kernel extends ConsoleKernel
         $schedule->command('domains:user')->withoutOverlapping()->hourly();
         $schedule->command('domains:ns')->withoutOverlapping()->hourly();
         $schedule->command('domains:details')->withoutOverlapping()->daily();
+
+        $schedule->command('cover_photo:upload')->withoutOverlapping()->hourly();
     }
 
     /**
