@@ -1,18 +1,24 @@
 {
     "name": "laravel/laravel",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "type": "project",
     "require": {
         "php": ">=7.0.0",
-        "fideloper/proxy": "~3.3",
+        "fideloper/proxy": "~4.0",
+        "intervention/image": "^2.4",
         "kitteam/reg-api": "^0.0.1",
+        "kitteam/tele2-api": "^0.0.1",
         "kitteam/vesta-api": "^1.0",
-        "laravel/framework": "5.5.*",
+        "laravel/framework": "^5.8",
         "laravel/tinker": "~1.0"
     },
     "require-dev": {
+        "composer/composer": "^1.8",
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "~1.0",
@@ -35,8 +41,7 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": [
-            ]
+            "dont-discover": []
         }
     },
     "scripts": {
