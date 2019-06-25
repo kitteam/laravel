@@ -1,18 +1,22 @@
+/* ==========================================================================
+   #PAGE OBJECT
+   ========================================================================== */
+
 /**
- * Use `page` to strucutre your page layout into sidebar, main content.
+ * Use `o-page` to strucutre your page layout into sidebar, main content.
  */
 
-.page {
+.o-page {
 	position: relative;
 	height: 100%;
 }
 
 
 /**
- * Used with `page__card` for better alignment.
+ * Used with `o-page__card` for better alignment.
  */
 
-.page--center {
+.o-page--center {
 	padding-top: $spacer-xlarge;
 }
 
@@ -22,7 +26,7 @@
  * 2. Sidebar always on the top.
  */
 
-.page__sidebar {
+.o-page__sidebar {
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -49,13 +53,12 @@
 /**
  * Page content is pushed to the right to provide space for the sidebar.
  *
- * 1. Must equal the width of the `sidebar`.
+ * 1. Must equal the width of the `o-sidebar`.
  */
 
-.page__content {
+.o-page__content {
 	margin-left: 250px; /* [1] */
 	overflow: hidden;
-	min-height: 100%;
 
 	@include respond-to($breakpoint-desktop) {
 		margin-left: 0;
@@ -67,14 +70,14 @@
 }
 
 
-/**
+/** 
  * Page Card
  *
- * A centered page card is used when you want the card to be centered and
+ * A centered page card is used when you want the card to be centered and 
  * provide a little space at the top & bottom e.g. login, 404 pages.
  */
 
-.page__card {
+.o-page__card {
 	width: 450px;
 	margin: 0 auto $spacer-large;
 
@@ -84,13 +87,13 @@
 }
 
 
-/**
+/** 
  * Horizontal Page Card
  *
  * Used with login-2 page.
  */
 
-.page__card--horizontal {
+.o-page__card--horizontal {
 	width: 800px;
 	margin: 0 auto $spacer-large;
 

@@ -1,3 +1,7 @@
+/* ==========================================================================
+   #COLORS UTILITIES
+   ========================================================================== */
+
 // sass-lint:disable no-important
 
 //
@@ -8,31 +12,31 @@
  * Set the text color of elements.
  */
 
-.color-success {
+.u-color-success {
 	color: $color-success !important;
 }
 
-.color-info {
+.u-color-info {
 	color: $color-info !important;
 }
 
-.color-danger {
+.u-color-danger {
 	color: $color-danger !important;
 }
 
-.color-warning  {
+.u-color-warning  {
 	color: $color-warning !important;
 }
 
-.color-primary {
+.u-color-primary {
 	color: $heading-color !important;
 }
 
-.color-secondary {
+.u-color-secondary {
 	color: $white !important;
 }
 
-.color-white {
+.u-color-white {
 	color: $white !important;
 }
 
@@ -41,49 +45,49 @@
   * Set the background color of elements.
   */
 
-.bg-success {
+.u-bg-success {
 	background: $green-200 !important;
 	background-color: $green-200 !important;
 }
 
-.bg-info {
+.u-bg-info {
 	background: $blue-500 !important;
 	background-color: $blue-500 !important;
 }
 
-.bg-danger {
+.u-bg-danger {
 	background: $red-400 !important;
 	background-color: $red-400 !important;
 }
 
-.bg-fancy {
+.u-bg-fancy {
 	background: $purple-200 !important;
 	background-color: $purple-200 !important;
 }
 
-.bg-warning {
+.u-bg-warning {
 	background: $orange-300 !important;
 	background-color: $orange-300 !important;
 }
 
-.bg-primary {
+.u-bg-primary {
 	background: $gunmetal-100 !important;
 	background-color: $gunmetal-100 !important;
 }
 
-.bg-secondary {
+.u-bg-secondary {
 	background: $secondary-background-color !important;
 	background-color: $secondary-background-color !important;
 }
 
-.bg-white {
+.u-bg-white {
 	background: $white !important;
 	background-color: $white !important;
 }
 
 
 /**
-  * Use brand-color utilities to apply text colors and background colors to
+  * Use brand-color utilities to apply text colors and background colors to 
   * brand-related components like social icons.
   */
 
@@ -91,27 +95,27 @@
  * Brand text colors
  */
 
-.color-facebook {
+.u-color-facebook {
 	color:  $color-facebook !important;
 }
 
-.color-twitter {
+.u-color-twitter {
 	color:  $color-twitter !important;
 }
 
-.color-pinterest {
+.u-color-pinterest {
 	color:  $color-pinterest !important;
 }
 
-.color-behance {
+.u-color-behance {
 	color: $color-behance !important;
 }
 
-.color-dribbble {
+.u-color-dribbble {
 	color: $color-dribbble !important;
 }
 
-.color-linkedin {
+.u-color-linkedin {
 	color: $color-linkedin !important;
 }
 
@@ -123,32 +127,32 @@
  *    the brand background-color.
  */
 
-.bg-facebook {
+.u-bg-facebook {
 	border-color: $color-facebook !important; /* [1] */
 	background:  $color-facebook !important;
 }
 
-.bg-twitter {
+.u-bg-twitter {
 	border-color: $color-twitter !important;
 	background:  $color-twitter !important;
 }
 
-.bg-pinterest {
+.u-bg-pinterest {
 	border-color: $color-pinterest !important;
 	background:  $color-pinterest !important;
 }
 
-.bg-behance {
+.u-bg-behance {
 	border-color: $color-behance !important;
 	background: $color-behance !important;
 }
 
-.bg-dribbble {
+.u-bg-dribbble {
 	border-color: $color-dribbble !important;
 	background: $color-dribbble !important;
 }
 
-.bg-linkedin {
+.u-bg-linkedin {
 	border-color: $color-linkedin;
 	background-color: $color-linkedin !important;
 }

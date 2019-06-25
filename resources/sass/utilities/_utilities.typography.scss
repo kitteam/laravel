@@ -1,3 +1,7 @@
+/* ==========================================================================
+   #TYPOGRAPHY UTILITIES
+   ========================================================================== */
+
 // sass-lint:disable no-important
 
 /**
@@ -7,31 +11,31 @@
  * allow for double stranded heading hierarchy, e.g. we semantically need an H2,
  * but we want it to be sized like an H1:
  *
- *   <h2 class="h1"></h2>
+ *   <h2 class="u-h1"></h2>
  *
  */
 
-.h1 {
+.u-h1 {
 	font-size: $h1-font-size;
 }
 
-.h2 {
+.u-h2 {
 	font-size: $h2-font-size;
 }
 
-.h3 {
+.u-h3 {
 	font-size: $h3-font-size;
 }
 
-.h4 {
+.u-h4 {
 	font-size: $h4-font-size;
 }
 
-.h5 {
+.u-h5 {
 	font-size: $h5-font-size;
 }
 
-.h6 {
+.u-h6 {
 	font-size: $h6-font-size;
 }
 
@@ -42,48 +46,48 @@
 /**
  * Text Colors
  */
-.text-mute {
+.u-text-mute {
 	color: $text-mute-color !important;
 }
 
-.text-danger {
+.u-text-danger {
 	color: $color-danger !important;
 }
 
-.text-success {
+.u-text-success {
 	color: #45B854 !important;
 }
 
-.text-dark {
+.u-text-dark {
 	color: $text-color;
 }
 
-.text-white {
+.u-text-white {
 	color: $white;
 }
 
 /**
   * Text Sizes
   */
-.text-tiny {
+.u-text-tiny {
 	font-size: $text-tiny-font-size !important;
 }
 
-.text-xsmall {
+.u-text-xsmall {
 	font-size: $text-small-font-size !important;
 }
 
-.text-small {
+.u-text-small {
 	font-size: $text-font-size !important;
 }
 
-.text-large {
+.u-text-large {
 	font-size: $h6-font-size !important;
 }
 
 // This class is used for 404 text only, we just couldn't find a better way
 // for implementing it
-.text-big {
+.u-text-big {
 	font-size: $h1-font-size * 1.5;
 	font-weight: $font-weight-bold;
 	line-height: 48px;
@@ -93,36 +97,36 @@
 /**
   * Font Weights
   */
-.text-bold {
+.u-text-bold {
 	font-weight: $font-weight-bold !important;
 }
 
 /**
   * Aligning Text
   */
-.text-right {
+.u-text-right {
 	text-align: right !important;
 }
 
-.text-left {
+.u-text-left {
 	text-align: left !important;
 }
 
-.text-center {
+.u-text-center {
 	text-align: center !important;
 }
 
 /**
  * Transforming Text
  */
-.text-uppercase {
+.u-text-uppercase {
 	text-transform: uppercase !important;
 }
 
-.text-lowercase {
+.u-text-lowercase {
 	text-transform: lowercase !important;
 }
 
-.text-capitalize {
+.u-text-capitalize {
 	text-transform: capitalize !important;
 }

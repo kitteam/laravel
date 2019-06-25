@@ -1,4 +1,8 @@
-.alert {
+/* ==========================================================================
+   #ALERTS
+   ========================================================================== */
+
+.c-alert {
 	display: flex;
 	position: relative;
 	width: 100%;
@@ -8,7 +12,7 @@
 	border-radius: $alert-border-radius;
 	color: $alert-color;
 
-	.close {
+	.c-close {
 		position: absolute;
 		top: $alert-close-top;
 		right: $alert-close-right;
@@ -30,7 +34,7 @@
  * 1. Align icon with text properly.
  */
 
-.alert__icon {
+.c-alert__icon {
 	position: relative;
 	bottom: -4px; /* [1] */
 	margin-right: $alert-icon-margin-right;
@@ -42,18 +46,18 @@
 /* Style variants
    ========================================================================== */
 
-.alert--success {
+.c-alert--success {
 	background-color: $alert-success-background-color;
 }
 
-.alert--info {
+.c-alert--info {
 	background-color: $alert-info-background-color;
 }
 
-.alert--warning {
+.c-alert--warning {
 	background-color: $alert-warning-background-color;
 }
 
-.alert--danger {
+.c-alert--danger {
 	background-color: $alert-danger-background-color;
 }

@@ -1,0 +1,27 @@
+.media {
+	@include clearfix;
+	display: block;
+}
+
+/**
+ * 1. Spacing between the image and the text should be declared through
+ *    the component, usually using a `spacing` utility class.
+ */
+
+.media__img { /* [1] */
+	float: left;
+
+	> img {
+		display: block;
+	}
+}
+
+.media__body {
+	display: block;
+	overflow: hidden;
+
+	&,
+	> :last-child {
+		margin-bottom: 0;
+	}
+}

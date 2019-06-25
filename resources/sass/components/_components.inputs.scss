@@ -1,4 +1,8 @@
-.input {
+/* ==========================================================================
+   #INPUTS
+   ========================================================================== */
+
+.c-input {
 	display: block;
 	width: 100%;
 	margin: 0;
@@ -43,7 +47,7 @@
  */
 
 // sass-lint:disable no-qualifying-elements
-textarea.input {
+textarea.c-input {
 	min-height: 90px;
 	font-size: $textarea-font-size;
 	font-weight: $textarea-font-weight;
@@ -54,7 +58,7 @@ textarea.input {
 /* State variants
    ========================================================================== */
 
-.input--success {
+.c-input--success {
 	border-color: $input-success-border-color;
 
 	&:focus {
@@ -62,7 +66,7 @@ textarea.input {
 	}
 }
 
-.input--warning {
+.c-input--warning {
 	border-color: $input-warning-border-color;
 
 	&:focus {
@@ -70,7 +74,7 @@ textarea.input {
 	}
 }
 
-.input--danger {
+.c-input--danger {
 	border-color: $input-danger-border-color;
 	color: $input-danger-color;
 

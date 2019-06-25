@@ -1,16 +1,20 @@
+/* ==========================================================================
+   #NAV
+   ========================================================================== */
+
 /**
- * Nav sits within the main navbar area. It’s fully responsive as it holds
- * navigation items/links that will be collapsed, toggled in small
- * screens via `nav-toggle` component.
+ * Nav sits within the main navbar area. It’s fully responsive as it holds 
+ * navigation items/links that will be collapsed, toggled in small 
+ * screens via `c-nav-toggle` component.
  */
 
-.nav {
+.c-nav {
 	display: block;
 
 	/**
 	 * Responsive Nav
 	 *
-	 * 1. Remove extra margin when `mr-auto` utility is used.
+	 * 1. Remove extra margin when `u-mr-auto` utility is used. 
 	 */
 	@include respond-to($breakpoint-tablet) {
 		position: relative;
@@ -42,7 +46,7 @@
 	}
 }
 
-.nav__list {
+.c-nav__list {
 	display: flex;
 	flex-wrap: wrap;
 	align-content: center;
@@ -50,11 +54,11 @@
 }
 
 
-/**
+/** 
  * 1. Allow positioning dropdown menus inside nav items.
  */
 
-.nav__item {
+.c-nav__item {
 	position: relative; /* [1] */
 	margin: $nav-item-margin;
 
@@ -75,7 +79,7 @@
 	}
 }
 
-.nav__link {
+.c-nav__link {
 	color: $nav-link-color;
 	font-size: $nav-link-font-size;
 	font-weight: $nav-link-font-weight;
@@ -100,14 +104,14 @@
    ========================================================================== */
 
 /**
- * Nav toggle is the popular hamburger-like icon that would show/hide `nav`
+ * Nav toggle is the popular hamburger-like icon that would show/hide `c-nav` 
  * via javascript through `js-nav-toggle` to toggle `is-open` class.
- *
+ * 
  * 1. Remove default button styles.
  * 2. Show only on small screens, hide on large screen.
  */
 
-.nav-toggle {
+.c-nav-toggle {
 	display: none;
 	position: relative;
 	width: $nav-toggle-width;
@@ -126,10 +130,10 @@
 
 
 /**
- * The hamburger icon itself, 3 bars stacked on top of each other.
+ * The hamburger icon itself, 3 bars stacked on top of each other. 
  */
 
-.nav-toggle__bar {
+.c-nav-toggle__bar {
 	display: block;
 	position: relative;
 	width: $nav-toggle-bar-width;

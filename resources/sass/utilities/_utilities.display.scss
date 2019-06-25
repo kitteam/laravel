@@ -1,21 +1,20 @@
+/* ==========================================================================
+   #DISPLAY UTILITIES
+   ========================================================================== */
+
 // sass-lint:disable no-important
 
-.block {
+.u-block {
 	display: block !important;
 }
 
-.inline-block {
+.u-inline-block {
 	display: inline-block !important;
 }
 
-.inline {
+.u-inline {
 	display: inline !important;
 }
 
-.wrap {
-	white-space: initial !important;
-}
 
-.nowrap {
-	white-space: nowrap !important;
-}
+

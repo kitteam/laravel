@@ -1,10 +1,14 @@
+//* ==========================================================================
+//   #RESPOND TO
+// ========================================================================== */
+
 // sass-lint:disable-all
 
 //
-// A mixin to handle midea queries, it responds to the specified breakpoint and
+// A mixin to handle midea queries, it responds to the specified breakpoint and 
 // down.
 //
-// USAGE:
+// USAGE: 
 //
 // @include responde-to($breakpoint-tablet){
 //	 .. styles will apply from tablet breakpoint and down ..

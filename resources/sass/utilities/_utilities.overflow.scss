@@ -1,12 +1,16 @@
+/* ==========================================================================
+   #OVERFLOW UTILITIES
+   ========================================================================== */
+
 /**
  * Overflow
  */
 
-.overflow-auto {
+.u-overflow-auto {
 	overflow: auto;
 }
 
-.overflow-scroll {
+.u-overflow-scroll {
 	overflow: scroll;
 }
 
@@ -15,11 +19,11 @@
  * Horizontal Overflow
  */
 
-.overflow-x-auto {
+.u-overflow-x-auto {
 	overflow: auto;
 }
 
-.overflow-x-scroll {
+.u-overflow-x-scroll {
 	overflow: scroll;
 }
 
@@ -28,10 +32,10 @@
  * Vericall Overflow
  */
 
-.overflow-y-auto {
+.u-overflow-y-auto {
 	overflow: auto;
 }
 
-.overflow-y-scroll {
+.u-overflow-y-scroll {
 	overflow: scroll;
 }

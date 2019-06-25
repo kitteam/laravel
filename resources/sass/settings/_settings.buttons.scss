@@ -1,3 +1,8 @@
+///* ========================================================================
+//   #BUTTONS
+//   ======================================================================== */
+
+
 $btn-padding: rem(8px) rem(20px) !default;
 $btn-border-width: $base-border-width !default;
 $btn-border-color: $blue-500 !default;
@@ -18,7 +23,7 @@ $btn-large-padding: rem(8px) rem(30px) !default;
 //
 // Color Variants
 //
-// only primary, secondary are here as other variations (success, danger..) are
+// only primary, secondary are here as other variations (success, danger..) are 
 // the same in the default and dark theme
 
 $btn-primary-gradient: $gunmetal-100, $gunmetal-400 !default;

@@ -1,23 +1,27 @@
+/* ==========================================================================
+   #CHOICES (Checkboxes & Radios)
+   ========================================================================== */
+
 /**
- * Checkboxes & Radios are controlled with a simple class called `choice`
- * because they are similar in styling, this class is used to share same
+ * Checkboxes & Radios are controlled with a simple class called `c-choice`
+ * because they are similar in styling, this class is used to share same 
  * styles between them.
  *
- * EXAMPLE:
+ * EXAMPLE: 
  *
- * <div class="choice choice--checkbox">
- *     <input class="choice__input" id="custom-checkbox" type="checkbox">
- *     <label class="choice__label" for="custom-checkbox">Checkbox 1</label>
+ * <div class="c-choice c-choice--checkbox">
+ *     <input class="c-choice__input" id="custom-checkbox" type="checkbox">
+ *     <label class="c-choice__label" for="custom-checkbox">Checkbox 1</label>
  * </div>
  */
 
 /**
  * 1. Get rid of white space cause by using `inline-flex`.
- *
+ * 
  * Read More: https://goo.gl/ajXW52
  */
 
-.choice {
+.c-choice {
 	margin: $choice-margin;
 	color: $choice-color;
 	font-size: 0; /* [1] */
@@ -29,7 +33,7 @@
 	 * NOTE: `disabled` attribute must be added to <input>
 	 */
 	&.is-disabled {
-		.choice__label {
+		.c-choice__label {
 			color: $choice-disabled-color;
 			cursor: default;
 
@@ -47,7 +51,7 @@
  * 2. Align the customized input with label.
  */
 
-.choice__input { /* [1] */
+.c-choice__input { /* [1] */
 	position: absolute;
 	width: 1px;
 	height: 1px;
@@ -59,7 +63,7 @@
 	clip: rect(0 0 0 0);
 	clip-path: inset(50%);
 
-	& + .choice__label {
+	& + .c-choice__label {
 		display: inline-flex;
 		align-items: center;
 		color: $choice-color;
@@ -67,7 +71,7 @@
 		cursor: pointer;
 	}
 
-	& + .choice__label::before {
+	& + .c-choice__label::before {
 		display: inline-block;
 		position: relative;
 		top: -1px; /* [2] */
@@ -90,14 +94,14 @@
  * Checkboxes
  */
 
-.choice--checkbox {
+.c-choice--checkbox {
 
-	.choice__input + .choice__label::before {
+	.c-choice__input + .c-choice__label::before {
 		border-radius: $choice-checkbox-border-radius;
 	}
 
 	// custom designed checkbox
-	.choice__input:checked + .choice__label::before {
+	.c-choice__input:checked + .c-choice__label::before {
 		border-color: $choice-checkbox-border-color;
 		background-color: $choice-checkbox-background-color;
 		font-family: $base-icon-font;
@@ -111,13 +115,13 @@
  * Radio buttons
  */
 
-.choice--radio {
+.c-choice--radio {
 
-	.choice__input + .choice__label::before {
+	.c-choice__input + .c-choice__label::before {
 		border-radius: 100%;
 	}
 
-	.choice__input:checked + .choice__label::before {
+	.c-choice__input:checked + .c-choice__label::before {
 		border: $choice-radio-border-width solid $choice-radio-border-color;
 		background-color: $choice-radio-background-color;
 		box-shadow: 0 0 0 $choice-radio-shadow-width $choice-radio-shadow-color;

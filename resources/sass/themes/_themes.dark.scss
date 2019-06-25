@@ -1,0 +1,158 @@
+///* ========================================================================
+//   #DARK THEME
+//   ======================================================================== */
+
+//
+// Dark Theme SCSS Variables
+//
+// We override default scss variabls to apply the new dark theme.
+//
+
+// global
+$body-background-color: #1B2431;
+$heading-color: #fff;
+$base-background-color: #273142;
+$base-border-color: #313D4F;
+$secondary-background-color: #313C4E;
+
+// text
+$text-color: $white;
+$text-strong-color: $white;
+
+// divider
+$divider-line-background-color: #313D4F;
+
+// breadcrumb 
+$breadcrumb-item-active-color: $text-color;
+
+// buttons
+$btn-primary-gradient: #273142, #273142;
+$btn-primary-hover-gradient: #273142, #273142;
+$btn-primary-focus-gradient: #273142, #273142;
+$btn-primary-hover-gradient: darken(#273142, 4%), darken(#273142, 4%);
+$btn-primary-focus-gradient: darken(#273142, 6%), darken(#273142, 6%);
+$btn-secondary-gradient: #506072, #506072;
+$btn-secondary-border-color: #506072;
+$btn-secondary-color: #fff;
+$btn-secondary-hover-gradient: darken(#506072, 1%), darken(#506072, 2%);
+$btn-secondary-hover-color: #fff;
+$btn-secondary-focus-gradient: darken(#506072, 2%), darken(#506072, 3%);
+$btn-secondary-focus-color: #fff;
+$btn-disabled-color: #354052;
+$btn-disabled-background-color: #222C3C;
+$btn-disabled-border-color: #313D4F;
+
+// dropdowns
+$dropdown-menu-background-color: #273142;
+$dropdown-menu-border-color: #313D4F;
+$dropdown-item-color: #fff;
+$dropdown-item-border-color: #313D4F;
+$dropdown-item-hover-background-color: #313D4F;
+
+// navbar
+$navbar-background-color: $base-background-color;
+$navbar-border-color: $base-border-color;
+
+// nav
+$nav-toggle-bar-background-color: $white;
+
+// toolbar 
+$toolbar-title-color: #fff;
+$toolbar-background-color: $base-background-color;
+
+// inputs
+$input-background-color: $base-background-color;
+$input-disabled-background-color: $base-background-color;
+$input-disabled-color: rgba($white, 0.5);
+$input-disabled-border-color: $base-border-color;
+
+$input-placeholder-color: $color-mute;
+$input-border-color: $base-border-color;
+$input-focus-color: $white;
+
+// fields
+$field-addon-border-color: $base-border-color;
+$field-addon-gradient: #273142, #273142;
+$field-message-color: rgba($text-color, 0.5);
+
+// modal
+$modal-body-background-color: $base-background-color;
+
+// card
+$card-background-color: $base-background-color;
+$card-header-background-color: $secondary-background-color;
+$card-border-color: $base-border-color;
+
+// select
+$select-background-color: #273142, #273142;
+$select-option-highlighted-background-color: #313D4F;
+$select-color: #fff;
+$select-border-color: $base-border-color;
+$select-multiple-background-color: #273142;
+$select-multiple-choice-background-color: rgba($color-info, .5);
+$select-multiple-choice-border-color: $color-info;
+$select-multiple-choice-color: #fff;
+$select-disabled-color: rgba(#fff, 0.5);
+$select-disabled-background-color: #273142;
+$select-disabled-border-color: #313D4F;
+
+// choices
+$choice-color: $white;
+$choice-disabled-color: rgba($white, .5);
+$choice-input-border-color: $base-border-color;
+$choice-input-background-color: $base-background-color;
+$choice-disabled-border-color: $base-border-color;
+$choice-disabled-background-color: $base-background-color;
+
+// Switches
+$switch-label-color: $white;
+$switch-background-color: $base-background-color;
+$switch-active-background-color: $green-400;
+
+// toggles
+$toggle-btn-background-color: $base-background-color;
+$toggle-btn-border-color: $base-border-color;
+
+// tooltips
+$tooltip-background-color: #353C48;
+
+
+// pagination
+$pagination-background-color: #273142;
+$pagination-color: $white;
+$pagination-control-background-color: #273142;
+$pagination-control-color: $white;
+$pagination-control-border-color: $base-border-color;
+$pagination-link-background-color: #273142;
+$pagination-link-border-color: $base-border-color;
+$pagination-link-color: rgba($white, 0.5);
+$pagination-link-active-color: $white;
+
+// progress
+$progress-background-color: rgba($base-border-color, .3);
+
+// tabs
+$tabs-list-background-color: #273142;
+$tabs-list-border-color: #313D4F;
+$tabs-link-hover-color: $white;
+$tabs-link-active-color: $white;
+$tabs-pane-background-color: #273142;
+$tabs-pane-border-color: $base-border-color;
+$tabs-pane-color: $text-color;
+$tabs-splitted-link-gradient: $base-background-color, $base-background-color;
+
+// tables
+$table-border-color: $base-border-color;
+$table-cell-color: $white;
+$table-head-slim-background-color: $base-background-color;
+$table-border-color: $base-border-color;
+$table-background-color: $base-background-color;
+$table-zebra-row-background-color: #313D4F;
+$table-highlight-row-background-color: #313D4F;
+$table-title-color: #fff;
+$table-title-background-color: #313D4F;
+
+// badges
+$badge-primary-background-color: #313D4F;
+$badge-secondary-background-color: #DFE1E5;
+$badge-secondary-color: rgba(#354052, .5);

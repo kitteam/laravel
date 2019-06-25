@@ -1,9 +1,13 @@
+/* ==========================================================================
+   #TABLES
+   ========================================================================== */
+
 /**
- * 1. The border-collapse CSS property specifies that the table's borders are
+ * 1. The border-collapse CSS property specifies that the table's borders are 
  *    collapsed and it means that adjacent cells share borders.
  */
 
-.table {
+.c-table {
 	display: table;
 	width: 100%;
 	max-width: 100%;
@@ -20,30 +24,30 @@
  * Wrap any table with one of these classes to make it responsive at certain
  * breakpoint.
  *
- * 1. Wrap your table with this class `table-responsive` if the table's width
+ * 1. Wrap your table with this class `c-table-responsive` if the table's width 
  * is larger than 1200px.
  */
 
-.table-responsive { /* [1] */
+.c-table-responsive { /* [1] */
 	display: block;
 	width: 100%;
 	overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
 
-	.table {
+	.c-table {
 		display: block;
 		overflow-y: hidden;
 	}
 }
 
 @media (max-width: $breakpoint-mobile) {
-	.table-responsive\@mobile {
+	.c-table-responsive\@mobile {
 		display: block;
 		width: 100%;
 		overflow-x: auto;
 		-webkit-overflow-scrolling: touch;
 
-		.table {
+		.c-table {
 			display: block;
 			overflow-y: hidden;
 		}
@@ -51,13 +55,13 @@
 }
 
 @media (max-width: $breakpoint-tablet) {
-	.table-responsive\@tablet {
+	.c-table-responsive\@tablet {
 		display: block;
 		width: 100%;
 		overflow-x: auto;
 		-webkit-overflow-scrolling: touch;
 
-		.table {
+		.c-table {
 			display: block;
 			overflow-y: hidden;
 		}
@@ -65,13 +69,13 @@
 }
 
 @media (max-width: $breakpoint-desktop) {
-	.table-responsive\@desktop {
+	.c-table-responsive\@desktop {
 		display: block;
 		width: 100%;
 		overflow-x: auto;
 		-webkit-overflow-scrolling: touch;
 
-		.table {
+		.c-table {
 			display: block;
 			overflow-y: hidden;
 		}
@@ -79,13 +83,13 @@
 }
 
 @media (max-width: $breakpoint-wide) {
-	.table-responsive\@wide {
+	.c-table-responsive\@wide {
 		display: block;
 		width: 100%;
 		overflow-x: auto;
 		-webkit-overflow-scrolling: touch;
 
-		.table {
+		.c-table {
 			display: block;
 			overflow-y: hidden;
 		}
@@ -93,10 +97,10 @@
 }
 
 /**
- * Use `table--zebra` to add zebra-styling to table rows inside the table.
+ * Use `c-table--zebra` to add zebra-styling to table rows inside the table.
  */
 
-.table--zebra {
+.c-table--zebra {
 	tbody tr:nth-of-type(odd) {
 		background-color: $table-zebra-row-background-color;
 	}
@@ -107,23 +111,23 @@
  * Highlight table row on hover.
  */
 
-.table--highlight {
+.c-table--highlight {
 	tbody tr:hover {
 		background-color: $table-highlight-row-background-color;
 	}
 }
 
 
-.table--fixed {
+.c-table--fixed {
 	table-layout: fixed;
 }
 
 /**
  * Table title/caption
- * <caption>
+ * <caption> 
  */
 
-.table__title {
+.c-table__title {
 	position: relative;
 	padding: 25px 30px;
 	border: $base-border-width solid $base-border-color;
@@ -159,7 +163,7 @@
  * downloading table content as a report.
  */
 
-.table__title-action {
+.c-table__title-action {
 	position: absolute;
 	top: 30px;
 	right: 30px;
@@ -173,11 +177,11 @@
  * Slimmer version of table's head with less sapcing and darker background
  */
 
-.table__head--slim {
+.c-table__head--slim {
 	padding: 0;
 	background-color: $table-head-slim-background-color;
 
-	.table__cell {
+	.c-table__cell {
 		padding: $table-head-cell-padding;
 	}
 }
@@ -187,7 +191,7 @@
  * Table Row
  */
 
-.table__row {
+.c-table__row {
 	border-top: $table-border-width solid $table-border-color; /* [1] */
 	border-bottom: $table-border-width solid $table-border-color; /* [1] */
 
@@ -196,26 +200,26 @@
 	}
 }
 
-.table__row--success,
-.table__row--danger,
-.table__row--info,
-.table__row--warning {
+.c-table__row--success,
+.c-table__row--danger,
+.c-table__row--info,
+.c-table__row--warning {
 	border-left: 3px solid;
 }
 
-.table__row--success {
+.c-table__row--success {
 	border-left-color: $color-success;
 }
 
-.table__row--danger {
+.c-table__row--danger {
 	border-left-color: $color-danger;
 }
 
-.table__row--info {
+.c-table__row--info {
 	border-left-color: $color-info;
 }
 
-.table__row--warning {
+.c-table__row--warning {
 	border-left-color: $color-warning;
 }
 
@@ -224,7 +228,7 @@
  * Table Cell
  */
 
-.table__cell {
+.c-table__cell {
 	padding: $table-cell-padding;
 	color: $table-cell-color;
 	font-size: $table-cell-font-size;
@@ -238,7 +242,7 @@
 	}
 }
 
-.table__cell--head {
+.c-table__cell--head {
 	color: $color-mute;
 	font-size: $text-font-size;
 	font-weight: $font-weight-semibold;
@@ -251,7 +255,7 @@
  * 2. Use flexbox to make sure all table-cell content is vertically centered.
  */
 
-.table__cell--img {
+.c-table__cell--img {
 	display: flex; /* [2] */
 	flex-wrap: wrap;
 	align-items: center;

@@ -1,17 +1,21 @@
+/* ==========================================================================
+   #RESPONSIVE UTILITIES
+   ========================================================================== */
+
 // sass-lint:disable no-important
 
 /**
  * Hide content at all viewports.
  */
 
-.hidden {
+.u-hidden {
 	display: none !important;
 }
 
 /**
  * Hide visually but make it accessible to screenreaders.
  */
-.hidden-visually {
+.u-hidden-visually {
 	position: absolute !important;
 	width: 1px !important;
 	height: 1px !important;
@@ -26,44 +30,44 @@
 
 
 /**
- * Use `hidden-down@{breakpoint}` to hide content from a specific breakpoint
+ * Use `u-hidden-down@{breakpoint}` to hide content from a specific breakpoint 
  * and smaller viewports.
  *
  * 1. Hide on mobile.
  * 2. Hide on mobile and tablet.
  * 3. Hide on mobile, tablet and desktop.
- * 4. Hide on mobile, tablet, desktop and wide.
+ * 4. Hide on mobile, tablet, desktop and wide. 
  *
- * NOTE: hidden@wide : still visible on viewports larger than wide breakpoint.
+ * NOTE: u-hidden@wide : still visible on viewports larger than wide breakpoint.
  */
 
 @media (max-width: $breakpoint-mobile) {
-	.hidden-down\@mobile { /* [1] */
+	.u-hidden-down\@mobile { /* [1] */
 		display: none !important;
 	}
 }
 
 @media (max-width: $breakpoint-tablet) {
-	.hidden-down\@tablet { /* [2] */
+	.u-hidden-down\@tablet { /* [2] */
 		display: none !important;
 	}
 }
 
 @media (max-width: $breakpoint-desktop) {
-	.hidden-down\@desktop { /* [3] */
+	.u-hidden-down\@desktop { /* [3] */
 		display: none !important;
 	}
 }
 
 @media (max-width: $breakpoint-wide) {
-	.hidden-down\@wide { /* [4] */
+	.u-hidden-down\@wide { /* [4] */
 		display: none !important;
 	}
 }
 
 
 /**
- * Use `hidden-up@{breakpoint}` to hide content from a specific breakpoint
+ * Use `u-hidden-up@{breakpoint}` to hide content from a specific breakpoint 
  * and larger viewports.
  *
  * 1. Hide on viewports larger than mobile.
@@ -71,30 +75,30 @@
  * 3. Hide on viewports larger than desktop.
  * 4. Hide on viewports larger than wide.
  *
- * NOTE: hidden@wide : still visible on viewports larger than wide breakpoint.
+ * NOTE: u-hidden@wide : still visible on viewports larger than wide breakpoint.
  */
 
 @media (min-width: $breakpoint-mobile) {
-	.hidden-up\@mobile { /* [1] */
+	.u-hidden-up\@mobile { /* [1] */
 		display: none !important;
 	}
 }
 
 
 @media (min-width: $breakpoint-tablet) {
-	.hidden-up\@tablet { /* [2] */
+	.u-hidden-up\@tablet { /* [2] */
 		display: none !important;
 	}
 }
 
 @media (min-width: $breakpoint-desktop) {
-	.hidden-up\@desktop { /* [3] */
+	.u-hidden-up\@desktop { /* [3] */
 		display: none !important;
 	}
 }
 
 @media (min-width: $breakpoint-wide) {
-	.hidden-up\@wide { /* [4] */
+	.u-hidden-up\@wide { /* [4] */
 		display: none !important;
 	}
 }

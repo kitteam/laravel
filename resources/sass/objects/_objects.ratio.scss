@@ -1,9 +1,13 @@
+/* ==========================================================================
+   #RATIO OBJECT
+   ========================================================================== */
+
 /**
  * Ratio object is used to keep media (e.g. images, videos) in
  * their correct aspect ratios.
  *
- * USAGE:
- * <div class="ratio ratio--16:9">
+ * USAGE: 
+ * <div class="o-ratio o-ratio--16:9">
  *     <iframe src"/"></iframe>
  * </div>
  */
@@ -13,7 +17,7 @@
  * 1. Default cropping is a 1:1 ratio (i.e. a perfect square)
  */
 
-.ratio {
+.o-ratio {
 	display: block;
 	position: relative;
 
@@ -25,10 +29,10 @@
 	}
 }
 
-.ratio__content,
-.ratio > iframe,
-.ratio > embed,
-.ratio > object {
+.o-ratio__content,
+.o-ratio > iframe,
+.o-ratio > embed,
+.o-ratio > object {
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -37,14 +41,14 @@
 	height: 100%;
 }
 
-.ratio--16\:9::before {
+.o-ratio--16\:9::before {
 	padding-bottom: (9 / 16) * 100%;
 }
 
-.ratio--4\:3::before {
+.o-ratio--4\:3::before {
 	padding-bottom: (3 / 4) * 100%;
 }
 
-.ratio--2\:1::before {
+.o-ratio--2\:1::before {
 	padding-bottom: (1 / 2) * 100%;
 }

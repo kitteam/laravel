@@ -1,9 +1,13 @@
+/* ==========================================================================
+   #CARD
+   ========================================================================== */
+
 /**
- * A simple component to apply card-like style, used with genearal widgets that
+ * A simple component to apply card-like style, used with genearal widgets that 
  * have sub-components in it.
  */
 
-.card {
+.c-card {
 	position: relative;
 	border: $card-border-width solid $card-border-color;
 	border-radius: $card-border-radius;
@@ -12,11 +16,11 @@
 
 
 /**
- * 1. Display a scrollbar if the content of the card is larger than the
+ * 1. Display a scrollbar if the content of the card is larger than the 
  *    card's width.
  */
 
-.card--responsive {
+.c-card--responsive {
 	overflow: auto; /* [1] */
 }
 
@@ -25,7 +29,7 @@
  * 1. Align header's content vertically in the center
  */
 
-.card__header {
+.c-card__header {
 	padding: $card-header-padding;
 	border-bottom: $card-border-width solid $card-border-color;
 	background-color: $card-header-background-color;
@@ -36,21 +40,21 @@
  * Remove default background-color of card's header
  */
 
-.card__header--transparent {
+.c-card__header--transparent {
 	background-color: transparent;
 }
 
-.card__title {
+.c-card__title {
 	margin: 0;
 	font-size: $card-title-font-size;
 }
 
-.card__meta {
+.c-card__meta {
 	color: $card-meta-color;
 	font-size: $card-meta-font-size;
 }
 
-.card__icon {
+.c-card__icon {
 	display: flex;
 	position: absolute;
 	top: -35px;
@@ -64,6 +68,7 @@
 	border-radius: 100%;
 	color: $card-icon-color;
 	font-size: $card-icon-font-size;
+	@include linear-gradient(to bottom, $gradient-info);
 
 	&:hover i {
 		color: inherit;
@@ -71,34 +76,6 @@
 	}
 }
 
-.card__body {
+.c-card__body {
 	padding: $card-body-padding;
-}
-
-.card,
-.card--info { /* [1] */
-    .card__icon {
-	    @include linear-gradient(to bottom, $gradient-info);
-    }
-}
-
-.card--success {
-    .card__icon {
-	    @include linear-gradient(to bottom, $gradient-success);
-    }
-	//background-color: $color-success;
-}
-
-.card--warning {
-    .card__icon {
-	    @include linear-gradient(to bottom, $gradient-warning);
-    }
-	//background-color: $color-warning;
-}
-
-.card--danger {
-    .card__icon {
-	    @include linear-gradient(to bottom, $gradient-danger);
-    }
-	//background-color: $color-danger;
 }

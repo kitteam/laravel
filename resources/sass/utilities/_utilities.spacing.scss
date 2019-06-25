@@ -1,8 +1,12 @@
+/* ==========================================================================
+   #SPACING UTILITIES
+   ========================================================================== */
+
 // sass-lint:disable no-important
 
 /**
- * Spacing utilities are used to provide spacing between components using
- * margins or inside the components using paddings. Different sizes allow you
+ * Spacing utilities are used to provide spacing between components using 
+ * margins or inside the components using paddings. Different sizes allow you 
  * to easily construct consistent layouts of components.
  */
 
@@ -21,7 +25,7 @@ $spacers: (
  *
  * m  -> all sides
  * mt -> margin-top
- * mr -> margin-right
+ * mr -> margin-right 
  * mb -> margin-bottom
  * ml -> margin-left
  * mv -> margin-top & margin-bottom (vertically)
@@ -30,32 +34,32 @@ $spacers: (
  */
 
 @each $property, $value in $spacers {
-	.m-#{$property} {
+	.u-m-#{$property} {
 		margin: $value !important;
 	}
 
-	.mt-#{$property} {
+	.u-mt-#{$property} {
 		margin-top: $value !important;
 	}
 
-	.mr-#{$property} {
+	.u-mr-#{$property} {
 		margin-right: $value !important;
 	}
 
-	.mb-#{$property} {
+	.u-mb-#{$property} {
 		margin-bottom: $value !important;
 	}
 
-	.ml-#{$property} {
+	.u-ml-#{$property} {
 		margin-left: $value !important;
 	}
 
-	.mv-#{$property} {
+	.u-mv-#{$property} {
 		margin-top: $value !important;
 		margin-bottom: $value !important;
 	}
 
-	.mh-#{$property} {
+	.u-mh-#{$property} {
 		margin-right: $value !important;
 		margin-left: $value !important;
 	}
@@ -67,7 +71,7 @@ $spacers: (
  *
  * p  -> all sides
  * pt -> padding-top
- * pr -> padding-right
+ * pr -> padding-right 
  * pb -> padding-bottom
  * pl -> padding-left
  * pv -> padding-top & padding-bottom (vertically)
@@ -76,32 +80,32 @@ $spacers: (
  */
 
 @each $property, $value in $spacers {
-	.p-#{$property} {
+	.u-p-#{$property} {
 		padding: $value !important;
 	}
 
-	.pt-#{$property} {
+	.u-pt-#{$property} {
 		padding-top: $value !important;
 	}
 
-	.pr-#{$property} {
+	.u-pr-#{$property} {
 		padding-right: $value !important;
 	}
 
-	.pb-#{$property} {
+	.u-pb-#{$property} {
 		padding-bottom: $value !important;
 	}
 
-	.pl-#{$property} {
+	.u-pl-#{$property} {
 		padding-left: $value !important;
 	}
 
-	.pv-#{$property} {
+	.u-pv-#{$property} {
 		padding-top: $value !important;
 		padding-bottom: $value !important;
 	}
 
-	.ph-#{$property} {
+	.u-ph-#{$property} {
 		padding-right: $value !important;
 		padding-left: $value !important;
 	}

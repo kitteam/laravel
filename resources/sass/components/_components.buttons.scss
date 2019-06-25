@@ -1,14 +1,18 @@
+/* ==========================================================================
+   #BUTTONS
+   ========================================================================== */
+
 /**
- * 1. Apply (btn--info) background if `btn--{style}` class isn't specified.
+ * 1. Apply (c-btn--info) background if `c-btn--{style}` class isn't specified.
  * 2. Align icon (if placed inside button) with text properly.
- * 3. Add dropdown icon/arrow to button with `has-dropdown` class, it depends
- *    on (FontAwesome) icon font so make sure to modify it if you changed your
+ * 3. Add dropdown icon/arrow to button with `has-dropdown` class, it depends 
+ *    on (FontAwesome) icon font so make sure to modify it if you changed your 
  *    base icon font.
  * 4. Use `disabled` property on <button> elements, and `is-disabled` class on
  *    <a> elements as they don't support `disabled` property.
  */
 
-.btn {
+.c-btn {
 	display: inline-block;
 	position: relative;
 	max-width: 100%;
@@ -81,7 +85,7 @@
 	}
 }
 
-.btn--fullwidth {
+.c-btn--fullwidth {
 	width: 100%;
 }
 
@@ -89,7 +93,7 @@
  * 1. Reduce spacing between the icon and text in small buttons.
  */
 
-.btn--small {
+.c-btn--small {
 	padding: $btn-small-padding;
 	font-size: $btn-small-font-size;
 
@@ -98,7 +102,7 @@
 	}
 }
 
-.btn--large {
+.c-btn--large {
 	padding: $btn-large-padding;
 	font-size: $btn-large-font-size;
 }
@@ -108,12 +112,12 @@
    ========================================================================== */
 
 /**
- * Buttons have a simple, nice gradient on the background, we use
- * sass's `darken()` method to generate a dark shade of the requested color,
+ * Buttons have a simple, nice gradient on the background, we use 
+ * sass's `darken()` method to generate a dark shade of the requested color, 
  * then we use our `linear-gradient` mixin to generate the gradient background.
  */
 
-.btn--primary {
+.c-btn--primary {
 	@include linear-gradient(to bottom, $btn-primary-gradient);
 	border-color: $btn-primary-border-color;
 
@@ -126,7 +130,7 @@
 	}
 }
 
-.btn--secondary {
+.c-btn--secondary {
 	@include linear-gradient(to bottom, $btn-secondary-gradient);
 	border-color: $btn-secondary-border-color;
 	color: $btn-secondary-color;
@@ -142,7 +146,7 @@
 	}
 }
 
-.btn--info {
+.c-btn--info {
 	@include linear-gradient(to bottom, $blue-300, $blue-400);
 	border-color: $blue-500;
 
@@ -155,7 +159,7 @@
 	}
 }
 
-.btn--success {
+.c-btn--success {
 	@include linear-gradient(to bottom, $green-300, $green-400);
 	border-color: $green-500;
 
@@ -168,7 +172,7 @@
 	}
 }
 
-.btn--fancy {
+.c-btn--fancy {
 	@include linear-gradient(to bottom, $purple-300, $purple-500);
 	border-color: $purple-500;
 
@@ -181,7 +185,7 @@
 	}
 }
 
-.btn--warning {
+.c-btn--warning {
 	@include linear-gradient(to bottom, $orange-300, $orange-500);
 	border-color: $orange-500;
 
@@ -194,7 +198,7 @@
 	}
 }
 
-.btn--danger {
+.c-btn--danger {
 	@include linear-gradient(to bottom, $red-100, $red-300);
 	border-color: $red-300;
 

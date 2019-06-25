@@ -1,0 +1,107 @@
+/* ==========================================================================
+   #SIDEBAR MINIMUZED
+   ========================================================================== */
+
+/**
+ * This file contains all customization for minimized-style sidebar.
+ */
+
+/**
+ * This sidebar object
+ */
+
+@media (max-width: $breakpoint-desktop) {
+	.c-sidebar.is-minimized .c-sidebar__icon {
+		margin-right: 15px;
+	}
+}
+
+@media (min-width: $breakpoint-desktop) {
+
+	.o-page__sidebar.is-minimized {
+		width: 70px;
+	}
+
+	.o-page__sidebar.is-minimized + .o-page__content {
+		margin-left: 70px;
+		transition: margin .3s;
+	}
+
+	/**
+	 * On Hover
+	 */
+
+	.o-page__sidebar.is-minimized:hover {
+		width: 250px;
+	}
+
+	.o-page__sidebar.is-minimized:hover + .o-page__content {
+		margin-left: 250px;
+	}
+
+
+	/**
+	 * This sidebar component
+	 */
+
+	.c-sidebar.is-minimized {
+		width: 70px;
+		overflow-x: hidden;
+		transition: width .3s;
+	}
+
+	.c-sidebar.is-minimized .c-sidebar__brand {
+		padding: 10px;
+	}
+
+	.c-sidebar.is-minimized .c-sidebar__brand-img {
+		margin-right: 15px;
+	}
+
+	.c-sidebar.is-minimized .c-sidebar__item {
+		border-bottom: 1px solid #2a3547;
+	}
+
+	.c-sidebar.is-minimized .c-sidebar__link {
+		padding: 0;
+	}
+
+	.c-sidebar.is-minimized .c-sidebar__icon {
+		display: block;
+		min-width: 70px;
+		padding: 15px 0;
+		font-size: 20px;
+		text-align: center;
+	}
+
+	.c-sidebar.is-minimized .c-sidebar__item.has-submenu > .c-sidebar__link::after {
+		display: none;
+		top: 20px;
+	}
+
+
+	/**
+	 * On Hover
+	 */
+
+	.c-sidebar.is-minimized:hover {
+		width: 250px;
+	}
+
+	.c-sidebar.is-minimized:hover .c-sidebar__brand-text {
+		display: block;
+	}
+
+	.c-sidebar.is-minimized:hover .c-sidebar__brand-img {
+		margin-right: 15px;
+	}
+
+	.c-sidebar.is-minimized:hover .c-sidebar__title {
+		display: block;
+	}
+
+	.c-sidebar.is-minimized:hover .c-sidebar__item.has-submenu > .c-sidebar__link::after {
+		display: block;
+	}
+
+}

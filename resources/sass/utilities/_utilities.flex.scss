@@ -1,3 +1,7 @@
+/* ==========================================================================
+   #FLEX UTILITIES
+   ========================================================================== */
+
 // sass-lint:disable no-important
 
 //
@@ -8,17 +12,17 @@
 // 3. Align items
 // 4. Align self
 // 5. Flex wrap
-//
+// 
 
 //
 // 1. Flex display
 //
 
-.flex {
+.u-flex {
 	display: flex !important;
 }
 
-.inline-flex {
+.u-inline-flex {
 	display: inline-flex !important;
 }
 
@@ -26,23 +30,23 @@
 // 2. Justify content
 //
 
-.justify-start {
+.u-justify-start {
 	justify-content: flex-start !important;
 }
 
-.justify-end {
+.u-justify-end {
 	justify-content: flex-end !important;
 }
 
-.justify-center {
+.u-justify-center {
 	justify-content: center !important;
 }
 
-.justify-between {
+.u-justify-between {
 	justify-content: space-between !important;
 }
 
-.justify-around {
+.u-justify-around {
 	justify-content: space-around !important;
 }
 
@@ -50,23 +54,23 @@
 // 3. Align items
 //
 
-.align-items-start {
+.u-align-items-start {
 	align-items: flex-start !important;
 }
 
-.align-items-end {
+.u-align-items-end {
 	align-items: flex-end !important;
 }
 
-.align-items-center {
+.u-align-items-center {
 	align-items: center !important;
 }
 
-.align-items-baseline {
+.u-align-items-baseline {
 	align-items: baseline !important;
 }
 
-.align-items-stretch {
+.u-align-items-stretch {
 	align-items: stretch !important;
 }
 
@@ -74,23 +78,23 @@
 // 4. Align self
 //
 
-.align-self-start {
+.u-align-self-start {
 	align-self: flex-start !important;
 }
 
-.align-self-end {
+.u-align-self-end {
 	align-self: flex-end !important;
 }
 
-.align-self-center {
+.u-align-self-center {
 	align-self: center !important;
 }
 
-.align-self-baseline {
+.u-align-self-baseline {
 	align-self: baseline !important;
 }
 
-.align-self-stretch {
+.u-align-self-stretch {
 	align-self: stretch !important;
 }
 
@@ -99,10 +103,10 @@
 // 5. Flex wrap
 //
 
-.flex-wrap {
+.u-flex-wrap {
 	flex-wrap: wrap !important;
 }
 
-.flex-nowrap {
+.u-flex-nowrap {
 	flex-wrap: nowrap !important;
 }

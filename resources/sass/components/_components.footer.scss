@@ -1,0 +1,58 @@
+/* ==========================================================================
+   #FOOTER
+   ========================================================================== */
+
+/**
+ * The site's main page footer, used as a wrapper for its sub-components.
+ */
+
+.c-footer {
+	display: flex;
+	position: relative;
+	flex-wrap: wrap;
+	width: 100%;
+	min-width: 100%;
+	min-height: $footer-height;
+	padding: $footer-padding;
+	border-top: $navbar-border-width solid $navbar-border-color;
+	background-color: $footer-background-color;
+    color: $footer-color;
+
+	@include respond-to($breakpoint-tablet){
+		padding: $spacer-xsmall $spacer-small;
+	}
+
+    p {
+        color: #b7c0cd;
+    }
+
+    .social {
+        margin: 15px 0;
+        a {
+            margin: 15px 15px 15px 0;
+        }
+    }
+}
+
+.c-footer__title {
+	margin-top: 25px;
+	margin-bottom: 15px;
+	color: $color-mute;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.c-footer__link {
+    transition: background-color .2s;
+    color: #b7c0cd;
+
+    &.is-active {
+		background-color: #1D2531;
+		box-shadow: inset 3px 0 0 0 #00A8FF;
+	}
+
+	&:hover {
+		color: $white;
+		text-decoration: none;
+	}
+}

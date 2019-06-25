@@ -1,21 +1,25 @@
+/* ==========================================================================
+   #OPACITY UTILITIES
+   ========================================================================== */
+
 // sass-lint:disable no-important
 
 /**
  * Use opacity utilities to specify the level of transparency of an element
  */
 
-.opacity-heavy {
+.u-opacity-heavy {
 	opacity: 0.75 !important;
 }
 
-.opacity-medium {
+.u-opacity-medium {
 	opacity: 0.5 !important;
 }
 
-.opacity-light {
+.u-opacity-light {
 	opacity: 0.25 !important;
 }
 
-.opacity-zero {
+.u-opacity-zero {
 	opacity: 0;
 }

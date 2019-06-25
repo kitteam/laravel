@@ -1,0 +1,67 @@
+// sass-lint:disable no-important
+
+/**
+ * Use border utilities to add or remove borders from certain components
+ * to prevent border collapsing.
+ */
+
+
+/**
+ * Add borders
+ */
+
+.border-top {
+	border-top: $base-border-width solid $base-border-color !important;
+}
+
+.border-right {
+	border-right: $base-border-width solid $base-border-color !important;
+}
+
+.border-bottom {
+	border-bottom: $base-border-width solid $base-border-color !important;
+}
+
+.border-left {
+	border-left: $base-border-width solid $base-border-color !important;
+}
+
+
+/**
+ * Remove borders
+ */
+
+.border-zero {
+	border: 0 !important;
+}
+
+.border-top-zero {
+	border-top: 0 !important;
+}
+
+.border-right-zero {
+	border-right: 0 !important;
+}
+
+.border-bottom-zero {
+	border-bottom: 0 !important;
+}
+
+.border-left-zero {
+	border-left: 0 !important;
+}
+
+
+/**
+ * Border radius
+ */
+
+.border-rounded {
+	border-radius: $base-border-radius;
+	overflow: hidden;
+}
+
+.border-circle {
+	border-radius: 100%;
+	overflow: hidden;
+}
