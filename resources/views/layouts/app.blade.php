@@ -10,6 +10,11 @@
 
     <title>@yield('title', config('app.name'))</title>
 
+    <!-- Google Font -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    
     <!-- Stylesheet -->
     <link href="{{ asset('css/app.css') }}?{{ time() }}" rel="stylesheet">
 </head>

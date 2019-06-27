@@ -1,47 +1,47 @@
 @extends('layouts.app')
 
 @section('title', 'Восстановление пароля | '. config('app.name'))
-@section('body.class', 'page page--center')
+@section('body.class', 'o-page o-page--center')
 
 @section('content')
-<div class="page__card">
-    <div class="card mb-xsmall">
-        <header class="card__header text-center">
-            <div class="row justify-center">
+<div class="o-page__card">
+    <div class="c-card u-mb-xsmall">
+        <header class="c-card__header u-text-center">
+            <div class="row u-justify-center">
                 <div class="col-9">
-                    <h1 class="h3">Восстановление пароля</h1>
-                    <p class="h6 text-mute">
+                    <h1 class="u-h3">Восстановление пароля</h1>
+                    <p class="u-h6 u-text-mute">
                         Для получения инструкции по сбросу пароля введите свой адрес электронной почты
                     </p>
                 </div>
             </div>
         </header>
 
-        <form class="card__body" method="POST" action="{{ route('password.email') }}">
+        <form class="c-card__body" method="POST" action="{{ route('password.email') }}">
             {{ csrf_field() }}
 
             @if (session('status'))
-            <div class="alert alert--success">
-                <i class="alert__icon fa fa-check-circle"></i> {{ session('status') }}
+            <div class="c-alert c-alert--success">
+                <i class="c-alert__icon fa fa-check-circle"></i> {{ session('status') }}
             </div>
             @endif
 
-            <div class="field mb-small">
-                <label class="field__label" for="email">Адрес электронной почты</label>
-                <input class="input{{ $errors->has('email') ? ' input--danger' : '' }}" type="email" id="email" name="email" value="{{ old('email') }}" placeholder="E-mail" required>
+            <div class="c-field u-mb-small">
+                <label class="c-field__label" for="email">Адрес электронной почты</label>
+                <input class="c-input{{ $errors->has('email') ? ' c-input--danger' : '' }}" type="email" id="email" name="email" value="{{ old('email') }}" placeholder="E-mail" required>
 
                 @if ($errors->has('email'))
-                <small class="field__message color-danger">
+                <small class="c-field__message u-color-danger">
                     <i class="fa fa-times-circle"></i> {{ $errors->first('email') }}
                 </small>
                 @endif
             </div>
 
-            <button class="btn btn--info btn--fullwidth" type="submit">Отправить инструкцию</button>
+            <button class="c-btn c-btn--info c-btn--fullwidth" type="submit">Отправить инструкцию</button>
         </form>
     </div>
 @if (Route::has('register'))
-    <a class="text-mute text-small" href="{{ route('register') }}">
+    <a class="u-text-mute u-text-small" href="{{ route('register') }}">
         Ещё нет аккаунта? Зарегистрируйтесь
     </a>
 @endif

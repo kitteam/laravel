@@ -1,42 +1,42 @@
 @extends('layouts.app')
 
 @section('title', '404 - Страница не найдена | '. config('app.name'))
-@section('body.class', 'page page--center')
+@section('body.class', 'o-page o-page--center')
 
 @section('content')
-<div class="page__card">
+<div class="o-page__card">
 
-    <div class="card mb-small">
-        <header class="card__header text-center pt-large">
-            <span class="card__icon">
+    <div class="c-card u-mb-small">
+        <header class="c-card__header u-text-center u-pt-large">
+            <span class="c-card__icon">
                 <i class="fa fa-chain-broken"></i>
             </span>
-            <h1 class="text-big mb-zero">
-                404 <em class="block text-mute text-large">Страница не найдена</em>
+            <h1 class="u-text-big u-mb-zero">
+                404 <em class="u-block u-text-mute u-text-large">Страница не найдена</em>
             </h1>
         </header>
 
-        <div class="card__body">
-            <h2 class="h5 text-center mb-medium">
-                Зарпошенная вами страница не существует. Чуть позже вы сможете воспользоваться поиском.
+        <div class="c-card__body">
+            <h2 class="u-h5 u-text-center u-mb-medium">
+                Запрошенная вами страница не существует. Чуть позже вы сможете воспользоваться поиском.
             </h2>
 
             <form>
-                <div class="field has-icon-right mb-xsmall">
-                    <span class="field__icon">
+                <div class="c-field has-icon-right u-mb-xsmall">
+                    <span class="c-field__icon">
                         <i class="fa fa-search"></i>
                     </span>
-                    <label class="field__label hidden-visually" for="input-search">Поиск</label>
-                    <input class="input" id="input-search" type="text" placeholder="Что нужно найти?" disabled>
+                    <label class="c-field__label u-hidden-visually" for="input-search">Поиск</label>
+                    <input class="c-input" id="input-search" type="text" placeholder="Что нужно найти?" disabled>
                 </div>
-                <button class="btn btn--info btn--fullwidth" disabled>Найти</button>
+                <button class="c-btn c-btn--info c-btn--fullwidth" disabled>Найти</button>
             </form>
         </div>
     </div>
     @if (Route::has('home'))
-    <div class="line justify-center">
-        <a class="text-mute" href="{{ route('home') }}">
-            Вернуться на главную
+    <div class="o-line u-justify-center">
+        <a class="u-text-mute" href="{{ route('home') }}">
+            <i class="fa fa-long-arrow-left u-mr-xsmall"></i> Вернуться на главную
         </a>
     </div>
     @endif
