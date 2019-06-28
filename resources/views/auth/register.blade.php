@@ -22,6 +22,8 @@
             <div class="c-field u-mb-small">
                 <label class="c-field__label" for="name">Имя</label>
                 <input id="name" class="c-input{{ $errors->has('name') ? ' c-input--danger' : '' }}" type="text" name="name" value="{{ old('name') }}" placeholder="Ваше имя" required autofocus>
+                <input id="_name" class="c-input u-hidden" type="text" name="_name" value="{{ old('_name') }}" placeholder="Ваше имя">
+                <input id="__name" class="c-input u-hidden" type="text" name="__name" value="{{ old('__name') ?: 'esquimau' }}" placeholder="Ваше имя">
 
                 @if ($errors->has('name'))
                 <small class="c-field__message u-color-danger">
