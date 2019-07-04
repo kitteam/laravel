@@ -13,6 +13,8 @@
         <form class="c-card__body" method="POST" action="{{ route('login') }}">
             {{ csrf_field() }}
 
+            @include('flash-message')
+
             <div class="c-field u-mb-small">
                 <label class="c-field__label" for="email">Адрес электронной почты</label>
                 <input id="email" type="email" class="c-input{{ $errors->has('email') ? ' u-input--danger' : '' }}" name="email" value="{{ old('email') }}" placeholder="E-mail" required autofocus>
