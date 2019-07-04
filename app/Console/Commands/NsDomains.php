@@ -40,7 +40,7 @@ class NsDomains extends Command
      */
     public function handle()
     {
-        if ($domains = UserDomain::get()) {
+        if ($domains = UserDomain::get()->where('provider', 'reg.ru')) {
             foreach ($domains->pluck('domain')->all() as $key => $dname) {
                 $dnames[$key] = ['dname' => $dname];
             }
