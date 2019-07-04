@@ -16,10 +16,10 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if (in_array(Auth::user()->id, [1,2,3])) {
+        if (($auth = Auth::user()) && in_array($auth->id, [1,2,3])) {
             return $next($request);
         }
-
-        return route('login');
+        
+        return redirect('/user');
     }
 }
