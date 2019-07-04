@@ -169,6 +169,7 @@ return [
          */
         Intervention\Image\ImageServiceProvider::class,
         ATehnix\LaravelVkRequester\VkRequesterServiceProvider::class,
+        Propaganistas\LaravelPhone\PhoneServiceProvider::class,
 
         /*
          * Application Service Providers...
