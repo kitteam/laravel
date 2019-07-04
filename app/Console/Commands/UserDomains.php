@@ -49,14 +49,23 @@ class UserDomains extends Command
                     'expiration_at' => $item['expiration_date'],
                 ];
                 switch ($item['state']) {
+                    case 'A':
+                        $data['state'] = 'activated';
+                        break;
                     case 'S':
                         $data['state'] = 'suspended';
                         break;
                     case 'N':
-                        $data['state'] = 'locked';
+                        $data['state'] = 'inactivated';
+                        break;
+                    case 'D':
+                        $data['state'] = 'deleted';
+                        break;
+                    case 'O':
+                        $data['state'] = 'transferred';
                         break;
                     default:
-                        $data['state'] = 'activated';
+                        $data['state'] = 'inactivated';
                 }
                 UserDomain::updateOrInsert(['domain' => $item['dname']], $data);
             }
