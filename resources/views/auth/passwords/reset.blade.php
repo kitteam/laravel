@@ -3,7 +3,7 @@
 @section('title', 'Сброс пароля | '. config('app.name'))
 @section('body.class', 'o-page o-page--center')
 
-@section('content')
+@section('body')
 <div class="o-page__card">
     <div class="c-card u-mb-xsmall">
         <header class="c-card__header u-text-center">
