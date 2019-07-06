@@ -17,6 +17,7 @@ class Kernel extends ConsoleKernel
         'App\Console\Commands\NsDomains',
         'App\Console\Commands\DetailsDomains',
         'App\Console\Commands\CoverPhotoUpload',
+        'App\Console\Commands\Callback',
     ];
 
     /**

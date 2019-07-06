@@ -26,9 +26,9 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function user()
+    public function index()
     {
-        return view('user');
+        return view('user.index');
     }
 
     public function domain()
