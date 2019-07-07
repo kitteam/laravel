@@ -1,15 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\ControlPanel;
 
+use App\Http\Controllers\Controller;
 use Auth;
-use App\UserDomain;
-use App\UserHosting;
-use Illuminate\Http\Request;
 use Redirect;
 use Vesta;
 
-class UserController extends Controller
+class MainController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -19,22 +17,6 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('user.index');
-    }
-
-    public function domain()
-    {
-        $domains = Auth::user()->domain;
-        return view('user.domain', ['collections' => $domains ?: [] ]);
     }
 
     public function hosting($id = false)
@@ -62,6 +44,6 @@ class UserController extends Controller
             }
         }
         $hostings = Auth::user()->hosting;
-        return view('user.hosting', ['collections' => $hostings ?: [] ]);
+        return view('cp.hosting.list', ['collections' => $hostings ?: [] ]);
     }
 }

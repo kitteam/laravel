@@ -13,7 +13,7 @@
     @section('sidebar')
     <div class="c-sidebar">
         <a class="c-sidebar__brand" href="{{ route('user.index') }}">
-            Kit.team
+            <img class="c-sidebar__brand-img" src="/img/logo-cp.png" alt="logo"> Личный кабинет
         </a>
 
         @if (Route::has('user.domain'))

@@ -81,7 +81,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ route('user') }}">Личный кабинет</a>
+                        <a href="{{ route('cp.index') }}">Личный кабинет</a>
                     @else
                         <a href="{{ route('login') }}">Авторизация</a>
                         <a href="{{ route('register') }}">Регистрация</a>

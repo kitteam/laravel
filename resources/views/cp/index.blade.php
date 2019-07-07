@@ -1,4 +1,4 @@
-@extends('user')
+@extends('control-panel')
 
 @section('title', '- | '. config('app.name'))
 @section('page.title', '-')

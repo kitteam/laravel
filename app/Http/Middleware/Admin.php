@@ -19,7 +19,7 @@ class Admin
         if (($auth = Auth::user()) && in_array($auth->id, [1,2,3])) {
             return $next($request);
         }
-        
-        return redirect('/user');
+
+        return redirect('/cp');
     }
 }

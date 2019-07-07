@@ -1,4 +1,4 @@
-@extends('user')
+@extends('control-panel')
 
 @section('title', 'Список хостинг услуг | '. config('app.name'))
 @section('page.title', 'Виртуальный хостинг')

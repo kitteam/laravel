@@ -18,17 +18,20 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
 
-Route::group(['prefix' => 'user'], function () {
-    Route::get('', 'UserController@index')->name('user.index');
-    Route::get('domain', 'UserController@domain')->name('user.domain');
-    Route::get('hosting', 'UserController@hosting')->name('user.hosting');
-    Route::get('hosting/{id}', 'UserController@hosting');
+Route::group(['prefix' => 'cp'], function () {
+    Route::get('', 'ControlPanel\MainController@index')->name('cp.index');
+    // Domain management
+    Route::get('domain', 'ControlPanel\DomainController@list')->name('cp.domain.list');
+    // Hosting management
+    Route::get('hosting', 'ControlPanel\HostingController@list')->name('cp.hosting.list');
+    Route::get('hosting/{id}', 'ControlPanel\HostingController@vesta');
 });
 
-Route::group(['prefix' => 'crm'], function () {
-    Route::get('', 'CrmController@index')->name('crm');
-    Route::get('account', 'CrmController@account')->name('crm.account');
-    Route::get('account/auth/{id}', 'CrmController@auth');
+Route::group(['prefix' => 'mcc'], function () {
+    Route::get('', 'MissionControl\Controller@index')->name('mc.index');
+    // Account management
+    Route::get('account', 'MissionControl\Controller@account')->name('mc.account.list');
+    Route::get('account/auth/{id}', 'MissionControl\Controller@auth');
 });
 
 Route::group(['prefix' => 'callback'], function () {

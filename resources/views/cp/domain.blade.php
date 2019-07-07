@@ -1,4 +1,4 @@
-@extends('user')
+@extends('control-panel')
 
 @section('title', 'Список доменов | '. config('app.name'))
 @section('page.title', 'Доменные имена')
