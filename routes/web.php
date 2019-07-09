@@ -44,14 +44,6 @@ Route::group(['prefix' => 'callback'], function () {
         return response()->json([ 'error' => 'Wrong authorized key' ], 403);
     });
 
-    //Route::post('telegram', function (PhpTelegramBot\Laravel\PhpTelegramBotContract $telegram_bot) {
-    //    $telegram_bot->handle();
-    //});
-
-    //Route::get('telegram', function (PhpTelegramBot\Laravel\PhpTelegramBotContract $telegram_bot) {
-    //    $telegram_bot->handle();
-    //});
-
     Route::any('telegram', 'Telegram\WebhookController@handle');
 
     Route::get('update', function () {
