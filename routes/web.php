@@ -27,11 +27,13 @@ Route::group(['prefix' => 'cp'], function () {
     Route::get('hosting/{id}', 'ControlPanel\HostingController@vesta');
 });
 
-Route::group(['prefix' => 'mcc'], function () {
-    Route::get('', 'MissionControl\Controller@index')->name('mc.index');
+Route::group(['prefix' => 'mc'], function () {
+    Route::get('', 'MissionControl\MainController@index')->name('mc.index');
     // Account management
-    Route::get('account', 'MissionControl\Controller@account')->name('mc.account.list');
-    Route::get('account/auth/{id}', 'MissionControl\Controller@auth');
+    Route::get('account', 'MissionControl\AccountController@list')->name('mc.account.list');
+    Route::get('account/auth/{id}', 'MissionControl\AccountController@auth');
+
+    Route::get('telephony', 'MissionControl\TelephonyController@history')->name('mc.telephony.history');
 });
 
 Route::group(['prefix' => 'callback'], function () {
@@ -42,9 +44,15 @@ Route::group(['prefix' => 'callback'], function () {
         return response()->json([ 'error' => 'Wrong authorized key' ], 403);
     });
 
-    Route::post('telegram', function (PhpTelegramBot\Laravel\PhpTelegramBotContract $telegram_bot) {
-        $telegram_bot->handle();
-    });
+    //Route::post('telegram', function (PhpTelegramBot\Laravel\PhpTelegramBotContract $telegram_bot) {
+    //    $telegram_bot->handle();
+    //});
+
+    //Route::get('telegram', function (PhpTelegramBot\Laravel\PhpTelegramBotContract $telegram_bot) {
+    //    $telegram_bot->handle();
+    //});
+
+    Route::any('telegram', 'Telegram\WebhookController@handle');
 
     Route::get('update', function () {
         return Artisan::call('cover_photo:upload', []);
