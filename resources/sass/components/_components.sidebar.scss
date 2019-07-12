@@ -2,7 +2,7 @@
    #SIDEBAR
    ========================================================================== */
 
-/** 
+/**
  * NOTE: The layout, width of the sidebar is controlled by `o-page__sidebar` in
  *       `o-page` object, found in `objects/_objects.page.scss`.
  */
@@ -19,7 +19,7 @@
 }
 
 /**
- * 1. Height of sidebar brand should equal the height of the navbar for perfect 
+ * 1. Height of sidebar brand should equal the height of the navbar for perfect
  *    alignment.
  * 2. You can change the height of brand/logo image as you want, but its height
  *    shouldn't be more than navbar's height.
@@ -138,6 +138,26 @@
 	}
 }
 
+.c-sidebar__footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 6px 6px 6px 24px;
+	&-link {
+		color: $color-mute;
+		font-size: 10px;
+		text-transform: uppercase;
+		padding: 0px 6px;
+
+		&:hover,
+		&.is-active {
+			color: $white;
+			text-decoration: none;
+		}
+
+	}
+}
+
 /* Style Variation - Light Sidebar
    ========================================================================== */
 
@@ -200,7 +220,7 @@
    ========================================================================== */
 
 /**
- * An icon the is used to toggle (show/hide) sidebar on small screen, you will 
+ * An icon the is used to toggle (show/hide) sidebar on small screen, you will
  * find this component placed in the main navbar.
  */
 
@@ -222,7 +242,7 @@
 }
 
 /**
- * The hamburger icon itself, 3 bars stacked on top of each other. 
+ * The hamburger icon itself, 3 bars stacked on top of each other.
  */
 
 .c-sidebar-toggle__bar {

@@ -4,54 +4,47 @@
 @section('page.title', 'Виртуальный хостинг')
 
 @section('container')
-<div class="table-responsive@desktop">
-    <table class="table">
+<div class="c-table-responsive@desktop">
+    <table class="c-table">
 
-            <caption class="table__title">
-                Список услуг <small>{{ count($collections) }} {{ trans_choice('аккаунт|аккаунта|аккаунтов', count($collections)) }}</small>
-            </caption>
+        <caption class="c-table__title">
+            Список услуг <small>{{ count($collections) }} {{ trans_choice('аккаунт|аккаунта|аккаунтов', count($collections)) }}</small>
+        </caption>
 
-        <thead class="table__head table__head--slim">
-                <tr class="table__row">
-                  <th class="table__cell table__cell--head">Тариф</th>
-                  <th class="table__cell table__cell--head">Аккаунт</th>
-                  <th class="table__cell table__cell--head">Сайты</th>
-                  <th class="table__cell table__cell--head">Окончание</th>
-                  <th class="table__cell table__cell--head">Статус</th>
-                  <th class="table__cell table__cell--head">
-                      <span class="hidden-visually">Управление</span>
-                  </th>
-                </tr>
+        <thead class="c-table__head c-table__head--slim">
+            <tr class="c-table__row">
+                <th class="c-table__cell c-table__cell--head">Тариф</th>
+                <th class="c-table__cell c-table__cell--head">Аккаунт</th>
+                <th class="c-table__cell c-table__cell--head">Сайты</th>
+                <th class="c-table__cell c-table__cell--head">Окончание</th>
+                <th class="c-table__cell c-table__cell--head">Статус</th>
+                <th class="c-table__cell c-table__cell--head">
+                    <span class="u-hidden-visually">Управление</span>
+                </th>
+            </tr>
         </thead>
 
         <tbody>
         @foreach ($collections as $collection)
-
-            @php
-                $vesta = Vesta::server($collection->server)->setUserName($collection->account);
-                $data = $vesta->listUserAccount();
-                $data = current($data);
-                $domains = array_keys($vesta->listWebDomain());
-            @endphp
-
+            @if (($data = $collection->vesta()->listUserAccount()) && $data = current($data))
             <tr class="table__row">
-                <td class="table__cell">
+                <td class="c-table__cell">
                     {{ $collection->hosting->name }}
-                    <small class="block text-mute">{{ $data['WEB_DOMAINS'] }} {{ trans_choice('сайт|сайта|сайтов', $data['WEB_DOMAINS']) }} / {{ is_numeric($data['DISK_QUOTA']) ? round($data['DISK_QUOTA'] / 1024, 2) : '∞' }} Gb</small>
+                    <small class="u-block u-text-mute">{{ $data['WEB_DOMAINS'] }} {{ trans_choice('сайт|сайта|сайтов', $data['WEB_DOMAINS']) }} / {{ is_numeric($data['DISK_QUOTA']) ? round($data['DISK_QUOTA'] / 1024, 2) : '∞' }} Gb</small>
                 </td>
 
-                <td class="table__cell">
-                    <div class="media">
-                        <div class="media__body">
-                            {{ $collection->account }}<span class="text-mute">@</span><span class="text-mute">{{ $collection->server }}</span>
-                            <small class="block text-mute">{{ $data['FNAME'] ." ".$data['LNAME'] }}</small>
+                <td class="c-table__cell">
+                    <div class="o-media">
+                        <div class="o-media__body">
+                            {{ $collection->account }}<span class="u-text-mute">@</span><span class="u-text-mute">{{ $collection->server }}</span>
+                            <small class="u-block u-text-mute">{{ $data['FNAME'] ." ".$data['LNAME'] }}</small>
                         </div>
                     </div>
                 </td>
 
-                <td class="table__cell">
+                <td class="c-table__cell">
                     <ul>
-                    @foreach ($domains as $domain)
+                    @foreach (array_keys($collection->vesta()->listWebDomain()) as $domain)
                         <li>
                             <a href="http://{{ $domain }}" target="_blank">{{ $domain }}</a>
                         </li>
@@ -59,23 +52,24 @@
                     </ul>
                 </td>
 
-                <td class="table__cell">
+                <td class="c-table__cell">
                     {{ $collection->expiration_at ? $collection->expiration_at->format('d.m.Y') : '—' }}
                 </td>
 
-                <td class="table__cell">
-                    <i class="fa fa-circle-o color-success mr-xsmall"></i>Активен
+                <td class="c-table__cell">
+                    <i class="fa fa-circle-o u-color-success u-mr-xsmall"></i>Активен
                 </td>
 
-                <td class="table__cell text-right">
-                    <div class="board__actions dropdown">
+                <td class="c-table__cell u-text-right">
+                    <div class="c-board__actions dropdown">
                         <a class="dropdown-toggle" href="#" id="dropdwonMenuBoard{{ $collection->id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="/img/icon-dots.svg" alt="Управление"></a>
-                        <div class="dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="dropdwonMenuBoard{{ $collection->id }}">
+                        <div class="c-dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="dropdwonMenuBoard{{ $collection->id }}">
                             <a href="/{{ Request::path() }}/{{ $collection->id }}" class="dropdown__item" target="_blank">Управление</a>
                         </div>
                     </div>
                 </td>
             </tr>
+            @endif
         @endforeach
         </tbody>
     </table>

@@ -12,30 +12,37 @@
 <div class="o-page__sidebar js-page-sidebar">
     @section('sidebar')
     <div class="c-sidebar">
-        <a class="c-sidebar__brand" href="{{ route('cp.index') }}">
-            <img class="c-sidebar__brand-img" src="/img/logo-cp.png" alt="logo"> Личный кабинет
+        <a class="c-sidebar__brand" href="{{ route('cp.index') }}" title="Панель управления">
+            <img class="c-sidebar__brand-img" src="/img/logo-cp.png" alt="logo"> Панель управления
         </a>
 
         @if (Route::has('cp.domain.list'))
-        <h4 class="c-sidebar__title"><a href="{{ route('cp.domain.list') }}">Доменные имена</a></h4>
+        <h4 class="c-sidebar__title">Доменные имена</h4>
         <ul class="c-sidebar__list">
             <li class="c-sidebar__item">
-                <a class="c-sidebar__link {{ route::is('cp.domain.list') ? 'is-active' : '' }}"
-                    href="{{ route('cp.domain.list') }}"><i class="fa u-mr-xsmall"></i> Список доменов
+                <a class="c-sidebar__link {{ route::is('cp.domain.*') ? 'is-active' : '' }}"
+                    href="{{ route('cp.domain.list') }}"><i class="fa fa-globe u-mr-xsmall"></i>Список доменов
                 </a>
             </li>
         </ul>
         @endif
 
         @if (Route::has('cp.hosting.list'))
-        <h4 class="c-sidebar__title"><a href="{{ route('cp.hosting.list') }}">Виртуальный хостинг</a></h4>
+        <h4 class="c-sidebar__title">Виртуальный хостинг</h4>
         <ul class="c-sidebar__list">
             <li class="c-sidebar__item">
-                <a class="c-sidebar__link {{ route::is('cp.hosting.list') ? 'is-active' : '' }}"
-                    href="{{ route('cp.hosting.list') }}"><i class="fa u-mr-xsmall"></i>Список услуг
+                <a class="c-sidebar__link {{ route::is('cp.hosting.*') ? 'is-active' : '' }}"
+                    href="{{ route('cp.hosting.list') }}"><i class="fa fa-list-alt u-mr-xsmall"></i>Список услуг
                 </a>
             </li>
         </ul>
+        @endif
+
+        @if (in_array(Auth::user()->id, [1,2,3]))
+        <div class="c-sidebar__footer">
+            <a href="{{ route('cp.index') }}" class="c-sidebar__footer-link is-active" title="Панель управления">Панель</a>
+            <a href="{{ route('mc.index') }}" class="c-sidebar__footer-link" title="Центр управления полётом">ЦУП</a>
+        </div>
         @endif
     </div>
     @show

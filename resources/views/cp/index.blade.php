@@ -1,7 +1,7 @@
 @extends('control-panel')
 
-@section('title', '- | '. config('app.name'))
-@section('page.title', '-')
+@section('title', 'Главная страница | '. config('app.name'))
+@section('page.title', 'Главная страница')
 
 @section('container')
 @endsection

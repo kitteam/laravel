@@ -22,6 +22,7 @@ Route::group(['prefix' => 'cp'], function () {
     Route::get('', 'ControlPanel\MainController@index')->name('cp.index');
     // Domain management
     Route::get('domain', 'ControlPanel\DomainController@list')->name('cp.domain.list');
+    Route::get('domain/{id}', 'ControlPanel\DomainController@info')->name('cp.domain.info');
     // Hosting management
     Route::get('hosting', 'ControlPanel\HostingController@list')->name('cp.hosting.list');
     Route::get('hosting/{id}', 'ControlPanel\HostingController@vesta');

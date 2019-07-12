@@ -1,6 +1,21 @@
 @extends('layouts.app')
 
-@section('content')
+@php
+$theme_settings = [
+    'string1',
+    'string2',
+    'string3',
+    ' ',
+    'string1',
+    'string1'
+];
+
+$counts = array_count_values($theme_settings);
+
+print_r($counts);
+@endphp
+
+@section('body')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

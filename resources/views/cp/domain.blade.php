@@ -12,22 +12,23 @@
         </caption>
 
         <thead class="c-table__head c-table__head--slim">
-                <tr class="c-table__row">
-                  <th class="c-table__cell c-table__cell--head">Домен</th>
-                  <th class="c-table__cell c-table__cell--head">Администратор</th>
-                  <th class="c-table__cell c-table__cell--head">Окончание</th>
-                  <th class="c-table__cell c-table__cell--head">NS сервера</th>
-                  <th class="c-table__cell c-table__cell--head">Статус</th>
-                  <th class="c-table__cell c-table__cell--head">
-                      <span class="u-hidden-visually">Управление</span>
-                  </th>
-                </tr>
+            <tr class="c-table__row">
+                <th class="c-table__cell c-table__cell--head">Домен</th>
+                <th class="c-table__cell c-table__cell--head">Администратор</th>
+                <th class="c-table__cell c-table__cell--head">Окончание</th>
+                <th class="c-table__cell c-table__cell--head">NS сервера</th>
+                <th class="c-table__cell c-table__cell--head">Статус</th>
+                <th class="c-table__cell c-table__cell--head">
+                    <span class="u-hidden-visually">Управление</span>
+                </th>
+            </tr>
         </thead>
 
         <tbody>
         @foreach ($collections as $collection)
             <tr class="c-table__row">
-                <td class="c-table__cell">{{ $collection->domain }}
+                <td class="c-table__cell">
+                    <a href="/{{ Request::path() }}/{{ $collection->id }}" title="Управление">{{ $collection->domain }}</a>
                     <small class="u-block u-text-mute">{{ $collection->provider }}</small>
                 </td>
 
@@ -69,9 +70,7 @@
                 <td class="c-table__cell">
                 @switch($collection->state)
                     @case('activated')
-
                         <i class="fa fa-circle-o u-color-success u-mr-xsmall"></i>Активен
-
                         @break
                     @case('suspended')
                         <i class="fa fa-circle-o u-color-danger u-mr-xsmall"></i>Приостановлен

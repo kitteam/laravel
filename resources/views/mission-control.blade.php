@@ -12,33 +12,38 @@
 <div class="o-page__sidebar js-page-sidebar">
     @section('sidebar')
     <div class="c-sidebar">
-        <a class="c-sidebar__brand" href="{{ route('mcc.index') }}">
-            <a class="c-sidebar__brand" href="{{ route('mcc.index') }}">
-                <img class="c-sidebar__brand-img" src="/img/logo-cp.png" alt="logo"> ЦУП
-            </a>
+        <a class="c-sidebar__brand" href="{{ route('mc.index') }}" title="Центр управления полетами">
+            <img class="c-sidebar__brand-img" src="/img/logo-cp.png" alt="logo"> ЦУП
+        </a>
 
-        @if (Route::has('crm.tele2'))
-        <h4 class="c-sidebar__title"><a href="{{ route('crm.tele2') }}">Телефония</a></h4>
+        @if (Route::has('mc.account.list'))
+        <h4 class="c-sidebar__title">Аккаунты</h4>
         <ul class="c-sidebar__list">
             <li class="c-sidebar__item">
-                <a class="c-sidebar__link {{ route::is('crm.tele2.history') ? 'is-active' : '' }}"
-                    href="{{ route('crm.tele2.history') }}"><i class="fa u-mr-xsmall"></i> Список вызовов
+                <a class="c-sidebar__link {{ route::is('mc.account.list') ? 'is-active' : '' }}"
+                    href="{{ route('mc.account.list') }}"><i class="fa fa-users u-mr-xsmall"></i>Список аккаунтов
                 </a>
             </li>
         </ul>
         @endif
 
-        @if (Route::has('crm.account'))
-        <h4 class="c-sidebar__title"><a href="{{ route('crm.account') }}">Аккаунты</a></h4>
+        @if (Route::has('mc.telephony.history'))
+        <h4 class="c-sidebar__title">Телефония</h4>
         <ul class="c-sidebar__list">
             <li class="c-sidebar__item">
-                <a class="c-sidebar__link {{ route::is('crm.account') ? 'is-active' : '' }}"
-                    href="{{ route('crm.account') }}"><i class="fa u-mr-xsmall"></i> Список аккаунтов
+                <a class="c-sidebar__link {{ route::is('mc.telephony.history') ? 'is-active' : '' }}"
+                    href="{{ route('mc.telephony.history') }}"><i class="fa fa-phone u-mr-xsmall"></i>Список вызовов
                 </a>
             </li>
         </ul>
         @endif
 
+        @if (in_array(Auth::user()->id, [1,2,3]))
+        <div class="c-sidebar__footer">
+            <a href="{{ route('cp.index') }}" class="c-sidebar__footer-link" title="Панель управления">Панель</a>
+            <a href="{{ route('mc.index') }}" class="c-sidebar__footer-link is-active" title="Центр управления полётом">ЦУП</a>
+        </div>
+        @endif
     </div>
     @show
 </div>
@@ -60,8 +65,8 @@
             </a>
 
             <div class="c-dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="dropdwonMenuAvatar">
-                @if (Route::has('user.invoice.refill'))
-                <a class="c-dropdown__item dropdown-item" href="{{ route('user.invoice.refill') }}">Пополнить баланс</a>
+                @if (Route::has('cp.invoice.refill'))
+                <a class="c-dropdown__item dropdown-item" href="{{ route('cp.invoice.refill') }}">Пополнить баланс</a>
                 @endif
                 <a class="c-dropdown__item dropdown-item" href="{{ route('logout') }}">Выход</a>
             </div>
