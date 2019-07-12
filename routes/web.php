@@ -38,13 +38,7 @@ Route::group(['prefix' => 'mc'], function () {
 });
 
 Route::group(['prefix' => 'callback'], function () {
-    Route::get('tele2', function (Request $request) {
-        if (($key = $request::get('key')) && $key == env('TELE2_CALLBACK_KEY')) {
-            return Artisan::call('callback:tele2', []);
-        }
-        return response()->json([ 'error' => 'Wrong authorized key' ], 403);
-    });
-
+    Route::any('tele2', 'Telephony\WebhookController@handle');
     Route::any('telegram', 'Telegram\WebhookController@handle');
 
     Route::get('update', function () {
