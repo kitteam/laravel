@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Vesta;
 
 class UserHosting extends Model
 {
@@ -20,5 +21,10 @@ class UserHosting extends Model
     public function hosting()
     {
         return $this->belongsTo('App\Hosting');
+    }
+
+    public function vesta()
+    {
+        return Vesta::server($this->server)->setUserName($this->account);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\ControlPanel;
+namespace App\Http\Controllers\MissionControl;
 
 use App\Http\Controllers\Controller;
 
@@ -13,7 +13,7 @@ class MainController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('admin');
     }
 
     /**
@@ -23,7 +23,7 @@ class MainController extends Controller
      */
     public function index()
     {
-        //return view('cp.index');
-        return redirect()->route('cp.domain.list');
+        //return view('mc.index');
+        return redirect()->route('mc.account.list');
     }
 }

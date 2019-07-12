@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\MissionControl;
 
+use App\Http\Controllers\Controller;
+
 use Auth;
 use Redirect;
 use Tele2;
@@ -25,12 +27,12 @@ class TelephonyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Tele2 $tele2)
+    public function history(Tele2 $tele2)
     {
         $statuses = [
             'ANSWERED_COMMON' => 'отвечен в режиме вызова на конкретный номер (P2P)',
             'ANSWERED_BY_ORIGINAL_CLIENT' => 'отвечен оператором',
-            'ANSWERED_BY_BUSY_FORWARD_CLIENT' => 'отвечен после переадресации по "Занято"' ,
+            'ANSWERED_BY_BUSY_FORWARD_CLIENT' => 'отвечен после переадресации по "Занято"',
             'ANSWERED_BY_NO_ANSWER_FORWARD_CLIENT' => 'отвечен после переадресации по "Нет ответа"',
             'NOT_ANSWERED_COMMON' => 'не отвечен',
             'CANCELLED_BY_CALLER' => 'отменен звонившим абонентом',
@@ -42,8 +44,8 @@ class TelephonyController extends Controller
             'DENIED_DUE_TO_UNKNOWN_NUMBER' => 'заблокирован по причине неизвестного номера'
         ];
 
-        $history = array_reverse($tele2::getHistory('-7 day'));
+        $history = array_reverse($tele2::getHistory('-3 day'));
         $collections = json_decode(json_encode($history));
-        return view('crm.index', ['collections' => $collections ?: [], 'statuses' => $statuses ]);
+        return view('mc.telephony', ['collections' => $collections ?: [], 'statuses' => $statuses ]);
     }
 }

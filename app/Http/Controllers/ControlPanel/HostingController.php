@@ -6,8 +6,9 @@ use App\Http\Controllers\Controller;
 use Auth;
 use Redirect;
 use Vesta;
+use App\UserHosting;
 
-class MainController extends Controller
+class HostingController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -19,7 +20,13 @@ class MainController extends Controller
         $this->middleware('auth');
     }
 
-    public function hosting($id = false)
+    public function list()
+    {
+        $hostings = Auth::user()->hosting;
+        return view('cp.hosting', ['collections' => $hostings ?: [] ]);
+    }
+
+    public function vesta($id = false)
     {
         stream_context_set_default(array(
             'ssl'                => array(
@@ -43,7 +50,7 @@ class MainController extends Controller
                 }
             }
         }
-        $hostings = Auth::user()->hosting;
-        return view('cp.hosting.list', ['collections' => $hostings ?: [] ]);
+
+        return $this->list();
     }
 }
