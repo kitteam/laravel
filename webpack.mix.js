@@ -11,5 +11,11 @@ let mix = require('laravel-mix');
  |
  */
 
+// mix.webpackConfig({
+//     externals: {
+//         "jquery": "jQuery"
+//     }
+// });
+
 mix.js('resources/js/app.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css');
