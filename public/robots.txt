@@ -1,2 +1,5 @@
 User-agent: *
-Disallow:
+Disallow: /cp
+Disallow: /mc
+
+Host: https://www.kit.team
