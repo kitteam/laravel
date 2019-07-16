@@ -19,7 +19,7 @@ class CreateUserHostingsTable extends Migration
             $table->unsignedInteger('user_id')->comment('Идентификатор пользователя');
             $table->string('server')->comment('Сервер');
             $table->string('account')->comment('Учетная запись');
-            $table->enum('state', ['activated', 'suspended', 'locked'])->default('activated')->comment('Состояние');
+            $table->enum('state', ['activated', 'suspended', 'inactivated', 'deleted', 'transferred'])->default('activated')->comment('Состояние');
             $table->timestamps();
             $table->timestamp('expiration_at')->nullable()->comment('Окончание');
         });
