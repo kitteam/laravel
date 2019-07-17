@@ -19,22 +19,14 @@
             </div>
             @endif
 
-            <div class="c-field u-mb-small">
-                <label class="c-field__label" for="name">Имя</label>
-                <input id="name" class="c-input{{ $errors->has('name') ? ' c-input--danger' : '' }}" type="text" name="name" value="{{ old('name') }}" placeholder="Ваше имя" required autofocus>
-                <input id="_name" class="c-input u-hidden" type="text" name="_name" value="{{ old('_name') }}" placeholder="Ваше имя">
-                <input id="__name" class="c-input u-hidden" type="text" name="__name" value="{{ old('__name') ?: 'esquimau' }}" placeholder="Ваше имя">
-
-                @if ($errors->has('name'))
-                <small class="c-field__message u-color-danger">
-                    <i class="fa fa-times-circle"></i> {{ $errors->first('name') }}
-                </small>
-                @endif
+            <div class="c-field">
+                <input id="name" class="c-input u-hidden" type="text" name="name" value="{{ old('name') }}" placeholder="Ваше имя">
+                <input id="_name" class="c-input u-hidden" type="text" name="_name" value="{{ old('_name') ?: 'esquimau' }}" placeholder="Ваше имя">
             </div>
 
             <div class="c-field u-mb-small">
                 <label class="c-field__label" for="email">Адрес электронной почты</label>
-                <input id="email" class="c-input{{ $errors->has('email') ? ' c-input--danger' : '' }}" type="email" name="email" value="{{ old('email') }}" placeholder="E-mail" required>
+                <input id="email" class="c-input{{ $errors->has('email') ? ' c-input--danger' : '' }}" type="email" name="email" value="{{ old('email') }}" placeholder="E-mail" required autofocus>
 
                 @if ($errors->has('email'))
                 <small class="c-field__message u-color-danger">
@@ -42,23 +34,6 @@
                 </small>
                 @endif
             </div>
-
-            {{--<div class="c-field u-mb-small">
-                <label class="c-field__label" for="password">Пароль</label>
-                <input id="password" class="c-input{{ $errors->has('password') ? ' c-input--danger' : '' }}" type="password" name="password" placeholder="Цифры, Буквы..." required>
-
-                @if ($errors->has('password'))
-                <small class="c-field__message u-color-danger">
-                    <i class="fa fa-times-circle"></i> {{ $errors->first('password') }}
-                </small>
-                @endif
-            </div>
-
-            <div class="c-field u-mb-small">
-                <label class="c-field__label" for="password-confirm">Повторно введите пароль</label>
-                <input id="password-confirm" class="c-input" type="password" name="password_confirmation" placeholder="Подтверждение пароля" required>
-            </div>
-            --}}
 
             <button class="c-btn c-btn--info c-btn--fullwidth" type="submit">Зарегистрироваться</button>
 
