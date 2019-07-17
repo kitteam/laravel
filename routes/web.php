@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('', 'FrontendController@index')->name('index');
+Route::get('hosting', 'FrontendController@hosting')->name('hosting');
+Route::get('service', 'FrontendController@service')->name('service');
+Route::get('about', 'FrontendController@about')->name('about');
+Route::get('support', 'FrontendController@support')->name('support');
 
 Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
@@ -35,6 +37,8 @@ Route::group(['prefix' => 'mc'], function () {
     Route::get('account/auth/{id}', 'MissionControl\AccountController@auth');
 
     Route::get('telephony', 'MissionControl\TelephonyController@history')->name('mc.telephony.history');
+
+    Route::get('cost', 'MissionControl\CostController@tld')->name('mc.cost.tld');
 });
 
 Route::group(['prefix' => 'callback'], function () {
