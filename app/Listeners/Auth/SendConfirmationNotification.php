@@ -2,19 +2,21 @@
 
 namespace App\Listeners\Auth;
 
-use App\Events\Auth\UserRegistered;
-use App\Mail\Auth\RegistrationEmail;
-use Mail;
+use App\Events\Auth\UserConfirmation;
 
 use Longman\TelegramBot\Telegram;
 use Longman\TelegramBot\Request as TelegramRequest;
 
-class SendRegisterNotification
+class SendConfirmationNotification
 {
-    public function handle(UserRegistered $event)
+    /**
+     * Handle the event.
+     *
+     * @param  UserConfirmation  $event
+     * @return void
+     */
+    public function handle(UserConfirmation $event)
     {
-        Mail::to($event->user->email)->send(new RegistrationEmail($event->user, $event->password));
-
         $this->sendTelegram($event->user->email);
     }
 
@@ -25,7 +27,7 @@ class SendRegisterNotification
 
         $telegramRequest->sendMessage([
             'chat_id' => env('PHP_TELEGRAM_CHAT_ID'),
-            'text'    => "Вав-вав. Предварительная регистрация нового пользователя.\r\n{$email}"
+            'text'    => "Вав-вав. Подтверждение регистрации нового пользователя.\r\n{$email}"
         ]);
     }
 }

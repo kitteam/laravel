@@ -10,6 +10,8 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
+use App\Events\Auth\UserConfirmation;
+
 class LoginController extends Controller
 {
     /*
@@ -56,6 +58,8 @@ class LoginController extends Controller
                 unset($data['id']);
                 if ($user = User::create($data)) {
                     DB::table('temp_users')->where('email', $credentials['email'])->delete();
+
+                    event(new UserConfirmation($user, $user->password));
                     //$user->markEmailAsVerified();
                 }
             }

@@ -18,6 +18,9 @@ class EventServiceProvider extends ServiceProvider
          'App\Events\Auth\UserRegistered' => [
              'App\Listeners\Auth\SendRegisterNotification',
          ],
+         'App\Events\Auth\UserConfirmation' => [
+             'App\Listeners\Auth\SendConfirmationNotification',
+         ],
      ];
 
      protected $subscribe = [
