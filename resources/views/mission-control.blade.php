@@ -38,6 +38,17 @@
         </ul>
         @endif
 
+        @if (Route::has('mc.cost.tld'))
+        <h4 class="c-sidebar__title">Стоимость</h4>
+        <ul class="c-sidebar__list">
+            <li class="c-sidebar__item">
+                <a class="c-sidebar__link {{ route::is('mc.cost.tld') ? 'is-active' : '' }}"
+                    href="{{ route('mc.cost.tld') }}"><i class="fa fa-globe u-mr-xsmall"></i>Доменные имена
+                </a>
+            </li>
+        </ul>
+        @endif
+
         @if (in_array(Auth::user()->id, [1,2,3]))
         <div class="c-sidebar__footer">
             <a href="{{ route('cp.index') }}" class="c-sidebar__footer-link" title="Панель управления">Панель</a>
@@ -61,7 +72,7 @@
 
         <div class="c-dropdown dropdown u-text-right">
             <a  class="c-avatar u-text-mute u-mb-zero has-dropdown dropdown-toggle" href="#" id="dropdwonMenuAvatar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{ Auth::user()->name }}
+                {{ Auth::user()->name ?? Auth::user()->email }}
             </a>
 
             <div class="c-dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="dropdwonMenuAvatar">
@@ -72,6 +83,8 @@
             </div>
         </div>
     </header>
+
+    @yield('toolbar')
 
     <div class="container-fluid u-mt-medium u-mb-xlarge">
         @yield('container')

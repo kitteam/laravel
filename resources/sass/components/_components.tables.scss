@@ -3,7 +3,7 @@
    ========================================================================== */
 
 /**
- * 1. The border-collapse CSS property specifies that the table's borders are 
+ * 1. The border-collapse CSS property specifies that the table's borders are
  *    collapsed and it means that adjacent cells share borders.
  */
 
@@ -24,7 +24,7 @@
  * Wrap any table with one of these classes to make it responsive at certain
  * breakpoint.
  *
- * 1. Wrap your table with this class `c-table-responsive` if the table's width 
+ * 1. Wrap your table with this class `c-table-responsive` if the table's width
  * is larger than 1200px.
  */
 
@@ -124,7 +124,7 @@
 
 /**
  * Table title/caption
- * <caption> 
+ * <caption>
  */
 
 .c-table__title {
@@ -259,4 +259,8 @@
 	display: flex; /* [2] */
 	flex-wrap: wrap;
 	align-items: center;
+}
+
+#datatable_filter {
+	display: none;
 }
