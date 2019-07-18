@@ -24,7 +24,7 @@ class WebhookController extends Controller
                 $calls = array_column($currents, 'callerNumberFull');
                 if ($call = array_diff($calls, (Cache::pull('calls') ?: []) )) {
                     TelegramBotRequest::sendMessage([
-                        'chat_id' => '-1001423625890',
+                        'chat_id' => env('PHP_TELEGRAM_CHAT_ID'),
                         'text'    => 'Гау-у-у. Вам звонит номер '. current($call),
                     ]);
                 }

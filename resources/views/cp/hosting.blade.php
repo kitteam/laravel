@@ -27,7 +27,7 @@
         <tbody>
         @foreach ($collections as $collection)
             @if (($data = $collection->vesta()->listUserAccount()) && $data = current($data))
-            <tr class="table__row">
+            <tr class="c-table__row">
                 <td class="c-table__cell">
                     {{ $collection->hosting->name }}
                     <small class="u-block u-text-mute">{{ $data['WEB_DOMAINS'] }} {{ trans_choice('сайт|сайта|сайтов', $data['WEB_DOMAINS']) }} / {{ is_numeric($data['DISK_QUOTA']) ? round($data['DISK_QUOTA'] / 1024, 2) : '∞' }} Gb</small>
@@ -57,14 +57,32 @@
                 </td>
 
                 <td class="c-table__cell">
-                    <i class="fa fa-circle-o u-color-success u-mr-xsmall"></i>Активен
+                    @switch($collection->state)
+                        @case('activated')
+                            <i class="fa fa-circle-o u-color-success u-mr-xsmall"></i>Активен
+                            @break
+                        @case('suspended')
+                            <i class="fa fa-circle-o u-color-danger u-mr-xsmall"></i>Приостановлен
+                            @break
+                        @case('deleted')
+                            <i class="fa fa-circle-o u-text-mute u-mr-xsmall"></i>Удалён
+                            @break
+                        @case('transferred')
+                            <i class="fa fa-circle-o u-text-mute u-mr-xsmall"></i>Перенесён
+                            @break
+                        @case('inactivated')
+                        @default
+                            <i class="fa fa-circle-o u-text-mute u-mr-xsmall"></i>Неактивен
+                    @endswitch
                 </td>
 
                 <td class="c-table__cell u-text-right">
                     <div class="c-board__actions dropdown">
-                        <a class="dropdown-toggle" href="#" id="dropdwonMenuBoard{{ $collection->id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="/img/icon-dots.svg" alt="Управление"></a>
+                        <a class="dropdown-toggle" href="#" id="dropdwonMenuBoard{{ $collection->id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="/img/icon-dots.svg" alt="Управление">
+                        </a>
                         <div class="c-dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="dropdwonMenuBoard{{ $collection->id }}">
-                            <a href="/{{ Request::path() }}/{{ $collection->id }}" class="dropdown__item" target="_blank">Управление</a>
+                            <a href="/{{ Request::path() }}/{{ $collection->id }}" class="c-dropdown__item" target="_blank">Управление</a>
                         </div>
                     </div>
                 </td>

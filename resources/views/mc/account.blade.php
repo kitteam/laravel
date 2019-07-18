@@ -5,7 +5,7 @@
 
 @section('container')
 <div class="c-table-responsive@desktop">
-    <table class="c-table">
+    <table class="c-table" id="datatable" data-page-length="25">
 
         <caption class="c-table__title">
             Список аккаунтов <small>{{ count($collections) }} {{ trans_choice('аккаунт|аккаунта|аккаунтов', count($collections)) }}</small>
@@ -13,11 +13,11 @@
 
         <thead class="c-table__head c-table__head--slim">
             <tr class="c-table__row">
-                <th class="c-table__cell c-table__cell--head">id</th>
+                <th class="c-table__cell c-table__cell--head no-sort">id</th>
                 <th class="c-table__cell c-table__cell--head">Имя</th>
                 <th class="c-table__cell c-table__cell--head">Email</th>
                 <th class="c-table__cell c-table__cell--head">Дата регистрации</th>
-                <th class="c-table__cell c-table__cell--head">
+                <th class="c-table__cell c-table__cell--head no-sort">
                     <span class="u-hidden-visually">Управление</span>
                 </th>
             </tr>
@@ -31,7 +31,7 @@
                 </td>
 
                 <td class="c-table__cell u-wrap">
-                    {{ $collection->name }}
+                    {{ $collection->name ?? '—' }}
                 </td>
 
                 <td class="c-table__cell">
