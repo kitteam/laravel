@@ -12,4 +12,6 @@ try {
 
     require('bootstrap');
     require('datatables');
+    require('@chenfengyuan/datepicker');
+    require('@chenfengyuan/datepicker/i18n/datepicker.ru-RU');
 } catch (e) {}

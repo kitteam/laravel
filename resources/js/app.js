@@ -52,4 +52,12 @@ $(function() {
             }
         });
     }
+
+    // Datepicker
+    if($('[data-toggle="datepicker"]').length) {
+        $('[data-toggle="datepicker"]').datepicker({
+            language: 'ru-RU',
+            format: 'dd.mm.yyyy'
+        });
+    }
 });
