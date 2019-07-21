@@ -57,6 +57,9 @@
 			transform: translateY(-50%);
 			color: $field-icon-color;
 			font-size: $field-icon-font-size;
+			&--label {
+				top: 70%;
+			}
 		}
 	}
 
@@ -82,7 +85,7 @@
 }
 
 /**
- * Inline fields don't take up whole width 
+ * Inline fields don't take up whole width
  *
  * Used with search input in the navbar & toolbar.
  */
@@ -97,8 +100,8 @@
 
 
 /**
- * Labels are used with inputs, always use labels with inputs for better 
- * accesibility. Hide labels using `u-hidden-visually` to display it for 
+ * Labels are used with inputs, always use labels with inputs for better
+ * accesibility. Hide labels using `u-hidden-visually` to display it for
  * screen readers.
  *
  * USAGE: <label class="c-field__label u-hidden-visually"></label>

@@ -73,10 +73,9 @@
 
 		&.is-active,
 		&.active {
-			padding: 20px 35px;
+			font-size: 14px;
 			border-bottom-color: $base-background-color;
 			background: $base-background-color;
-			font-size: 18px;
 		}
 	}
 }
