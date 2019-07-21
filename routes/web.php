@@ -28,6 +28,8 @@ Route::group(['prefix' => 'cp'], function () {
     // Hosting management
     Route::get('hosting', 'ControlPanel\HostingController@list')->name('cp.hosting.list');
     Route::get('hosting/{id}', 'ControlPanel\HostingController@vesta');
+
+    Route::any('account', 'ControlPanel\AccountController@edit')->name('cp.account.edit');
 });
 
 Route::group(['prefix' => 'mc'], function () {
