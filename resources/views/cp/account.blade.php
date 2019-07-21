@@ -73,7 +73,7 @@ $security = request()->get('password');
                         <div class="col-lg-6">
                             <div class="c-field u-mb-small">
                                 <label class="c-field__label" for="birthdate">Дата рождения</label>
-                                <input class="c-input" data-toggle="datepicker" type="text" id="birthdate" name="birthdate" value="{{ $collection->birthdate }}" placeholder="Дата рождения">
+                                <input class="c-input" data-toggle="datepicker" type="text" id="birthdate" name="birthdate" value="{{ $collection->birthdate->format('d.m.Y') }}" placeholder="Дата рождения">
                             </div>
                         </div>
                     </div>

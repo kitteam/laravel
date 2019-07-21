@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
 use Auth;
 
 class AccountController extends Controller
@@ -44,6 +45,11 @@ class AccountController extends Controller
             // Если ошибок нет, сохраняем данные
             if (false == $validator->fails() )
             {
+                // Модификация даты
+                if (isset($data['birthdate']) && !empty($data['birthdate'])) {
+                    $data['birthdate'] = Carbon::createFromFormat('d.m.Y', $data['birthdate'])->toDateString();
+                }
+
                 // Проверяем текущий пароль  и шифруем новый
                 if (isset($data['password'])) {
                     $data['password'] = Hash::make($data['password']);

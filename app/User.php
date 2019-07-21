@@ -18,12 +18,15 @@ class User extends Authenticatable
         'name',
         'middlename',
         'surname',
+        'birthdate',
         'email',
         'phone',
         'passport',
         'address',
         'password',
     ];
+
+    protected $dates = ['birthdate'];
 
     /**
      * The attributes that should be hidden for arrays.
