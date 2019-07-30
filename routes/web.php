@@ -29,7 +29,7 @@ Route::group(['prefix' => 'cp'], function () {
     Route::get('hosting', 'ControlPanel\HostingController@list')->name('cp.hosting.list');
     Route::get('hosting/{id}', 'ControlPanel\HostingController@vesta');
 
-    Route::any('account', 'ControlPanel\AccountController@edit')->name('cp.account.edit');
+    Route::any('account', 'ControlPanel\AccountController@info')->name('cp.account.info');
 });
 
 Route::group(['prefix' => 'mc'], function () {
@@ -41,6 +41,8 @@ Route::group(['prefix' => 'mc'], function () {
     Route::get('telephony', 'MissionControl\TelephonyController@history')->name('mc.telephony.history');
 
     Route::get('cost', 'MissionControl\CostController@tld')->name('mc.cost.tld');
+
+    Route::get('bot/runa', 'MissionControl\BotController@runa')->name('mc.bot.runa');
 });
 
 Route::group(['prefix' => 'callback'], function () {

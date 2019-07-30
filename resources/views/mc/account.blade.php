@@ -31,7 +31,7 @@
                 </td>
 
                 <td class="c-table__cell u-wrap">
-                    {{ $collection->name ?? '—' }}
+                    {{ $collection->name ? $collection->name .' '. $collection->surname : '—' }}
                 </td>
 
                 <td class="c-table__cell">

@@ -21,6 +21,12 @@ class AccountController extends Controller
         $this->middleware('auth');
     }
 
+    public function info()
+    {
+        $user = Auth::user();
+        return view('cp.account', ['collection' => $user]);
+    }
+
     /**
      * Show the application dashboard.
      *

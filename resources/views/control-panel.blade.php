@@ -65,8 +65,8 @@
             </a>
 
             <div class="c-dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="dropdwonMenuAvatar">
-                @if (Route::has('cp.account.edit'))
-                <a class="c-dropdown__item dropdown-item" href="{{ route('cp.account.edit') }}">Аккаунт</a>
+                @if (Route::has('cp.account.info'))
+                <a class="c-dropdown__item dropdown-item" href="{{ route('cp.account.info') }}">Профиль аккаунта</a>
                 @endif
                 @if (Route::has('cp.invoice.refill'))
                 <a class="c-dropdown__item dropdown-item" href="{{ route('cp.invoice.refill') }}">Пополнить баланс</a>
