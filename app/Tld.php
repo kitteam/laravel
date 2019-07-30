@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tld extends Model
 {
-    protected $rate = 3.33;
+    protected $rate = 2; //3.33;
 
     public function getRegPriceAttribute($value)
     {
