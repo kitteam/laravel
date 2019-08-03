@@ -14,4 +14,5 @@ try {
     require('datatables');
     require('@chenfengyuan/datepicker');
     require('@chenfengyuan/datepicker/i18n/datepicker.ru-RU');
+    //require('@fortawesome/fontawesome-free/js/fontawesome');
 } catch (e) {}

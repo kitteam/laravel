@@ -85,7 +85,13 @@
 // VENDORS
 //
 @import "vendor/bootstrap-grid";
-@import "vendor/fontawesome";
+// New version
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+//@import "~@fortawesome/fontawesome-free/scss/brands";
+@import "~@fortawesome/fontawesome-free/scss/v4-shims";
+
 @import "vendor/fullcalendar";
 @import "vendor/fullcalendar-custom"; // override `fullcalendar` default styles
 @import "vendor/dragula";
