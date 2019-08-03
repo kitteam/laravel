@@ -4,7 +4,7 @@
 
 /**
  * 1. Get rid of white space cause by using `inline-flex`.
- * 
+ *
  * Read More: https://goo.gl/ajXW52
  */
 
@@ -94,6 +94,7 @@
 		background-color: $grey-600;
 		color: $white;
 		content: "\f00c"; // fa-check
+		font-weight: 900;
 	}
 }
 

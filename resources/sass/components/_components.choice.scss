@@ -4,10 +4,10 @@
 
 /**
  * Checkboxes & Radios are controlled with a simple class called `c-choice`
- * because they are similar in styling, this class is used to share same 
+ * because they are similar in styling, this class is used to share same
  * styles between them.
  *
- * EXAMPLE: 
+ * EXAMPLE:
  *
  * <div class="c-choice c-choice--checkbox">
  *     <input class="c-choice__input" id="custom-checkbox" type="checkbox">
@@ -17,7 +17,7 @@
 
 /**
  * 1. Get rid of white space cause by using `inline-flex`.
- * 
+ *
  * Read More: https://goo.gl/ajXW52
  */
 
@@ -107,6 +107,7 @@
 		font-family: $base-icon-font;
 		font-size: 10px;
 		content: "\f00c"; // fa-check
+		font-weight: 900;
 	}
 }
 

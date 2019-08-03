@@ -56,6 +56,7 @@
 	position: absolute;
 	display: inline-block;
 	content: "\f0d8"; // fa-caret-up
+	font-weight: 900;
 	color: $color-mute;
 	font-family: $base-icon-font;
 }
@@ -73,6 +74,7 @@
 	right: 10px;
 	bottom: 25%;
 	content: "\f0d7"; // fa-caret-down
+	font-weight: 900;
 }
 
 .dataTable thead.c-table__head--slim .sorting:before,
@@ -88,6 +90,7 @@
 	right: 10px;
 	bottom: 6px;
 	content: "\f0d7"; // fa-caret-down
+	font-weight: 900;
 }
 
 .dataTable thead .sorting:last-child:after,
@@ -97,7 +100,7 @@
 .dataTable thead .sorting_asc:last-child:before,
 .dataTable thead .sorting_desc:last-child:before  {
 	right: 20px;
-} 
+}
 
 .dataTable thead .sorting_asc:after {
 	opacity: 0.5;

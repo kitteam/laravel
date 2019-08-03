@@ -82,6 +82,7 @@
 		color: #B7C0CD;
 		font-family: $base-icon-font;
 		content: "\f0d7"; // fa-caret-down
+		font-weight: 900;
 	}
 
 	&.is-open {
@@ -90,6 +91,7 @@
 
 		> .c-sidebar__link::after {
 			content: "\f0d8"; // fa-caret-up
+			font-weight: 900;
 		}
 	}
 }
