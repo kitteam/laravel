@@ -59,20 +59,20 @@
                 <td class="c-table__cell">
                     @switch($collection->state)
                         @case('activated')
-                            <i class="fa fa-circle-o u-color-success u-mr-xsmall"></i>Активен
+                            <i class="fa fa-circle u-color-success u-mr-xsmall"></i>Активен
                             @break
                         @case('suspended')
-                            <i class="fa fa-circle-o u-color-danger u-mr-xsmall"></i>Приостановлен
+                            <i class="fa fa-circle u-color-danger u-mr-xsmall"></i>Приостановлен
                             @break
                         @case('deleted')
-                            <i class="fa fa-circle-o u-text-mute u-mr-xsmall"></i>Удалён
+                            <i class="fa fa-circle u-text-mute u-mr-xsmall"></i>Удалён
                             @break
                         @case('transferred')
-                            <i class="fa fa-circle-o u-text-mute u-mr-xsmall"></i>Перенесён
+                            <i class="fa fa-circle u-text-mute u-mr-xsmall"></i>Перенесён
                             @break
                         @case('inactivated')
                         @default
-                            <i class="fa fa-circle-o u-text-mute u-mr-xsmall"></i>Неактивен
+                            <i class="fa fa-circle u-text-mute u-mr-xsmall"></i>Неактивен
                     @endswitch
                 </td>
 

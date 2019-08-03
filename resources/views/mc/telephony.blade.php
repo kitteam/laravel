@@ -69,11 +69,11 @@
                 <td class="c-table__cell">
                 @switch($collection->callStatus)
                     @case('NOT_ANSWERED_COMMON')
-                        <i class="fa fa-circle-o u-color-danger u-mr-xsmall"></i>
+                        <i class="fa fa-circle u-color-danger u-mr-xsmall"></i>
                         {{ $statuses[$collection->callStatus] }}
                         @break
                     @default
-                        <i class="fa fa-circle-o u-color-success u-mr-xsmall"></i>
+                        <i class="fa fa-circle u-color-success u-mr-xsmall"></i>
                         {{ $statuses[$collection->callStatus] }}
                 @endswitch
                 </td>
