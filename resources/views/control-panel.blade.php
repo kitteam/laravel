@@ -59,9 +59,9 @@
 
         <h2 class="c-navbar__title u-mr-auto">@yield('page.title', 'Панель управления')</h2>
 
-        <div class="c-dropdown dropdown u-text-right">
-            <a  class="c-avatar u-text-mute u-mb-zero has-dropdown dropdown-toggle" href="#" id="dropdwonMenuAvatar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{ Auth::user()->name ?? Auth::user()->email }}
+        <div class="c-dropdown dropdown">
+            <a  class="c-avatar c-avatar--xsmall has-dropdown dropdown-toggle" href="#" id="dropdwonMenuAvatar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img class="c-avatar__img" src="https://ui-avatars.com/api/?name={{ Auth::user()->name .'+'. Auth::user()->surname }}&background=2ea1f8&color=fff&rounded=true" alt="{{ Auth::user()->name ?? Auth::user()->email }}">
             </a>
 
             <div class="c-dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="dropdwonMenuAvatar">
