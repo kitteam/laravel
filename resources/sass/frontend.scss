@@ -1,0 +1,133 @@
+@import "tools/tools.rem";
+@import "tools/tools.clearfix";
+@import "tools/tools.linear-gradient";
+@import "tools/tools.respond-to";
+
+@import "settings/settings.global";
+
+@import "vendor/bootstrap-grid";
+
+@import "utilities/utilities.floats";
+@import "utilities/utilities.clearfix";
+@import "utilities/utilities.spacing";
+@import "utilities/utilities.display";
+@import "utilities/utilities.borders";
+@import "utilities/utilities.flex";
+@import "utilities/utilities.bootstrap";
+
+html {
+    height: 100%;
+
+    body {
+        margin: 0;
+        height: 100%;
+        font-family: 'Roboto', sans-serif;
+        font-size: rem(14px);
+        font-weight: 300;
+        color: #ffffff;
+        @include linear-gradient(to bottom right, #2bbceb, #0038aa);
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background-image: url('~/img/mountains.min.png');
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        header {
+            nav {
+                .login {
+                    display: inline-flex;
+                    border-radius: 50%;
+                    border: 2px solid #00ff00;
+                    &:hover {
+                        border: 2px solid transparent;
+                    }
+                }
+            }
+        }
+
+        main {
+            flex:1 0 auto;
+            .content {
+                padding-left: 70px;
+                ul {
+                    margin: 0;
+                    padding: 0 0 30px;
+                    list-style: none;
+                }
+            }
+            .esquimau {
+                position: relative;
+                top: -20px;
+                text-align: right;
+                img {
+                    max-width: 100%;
+                }
+            }
+            .logo {
+                display: block;
+                padding: 0 0 30px;
+            }
+            .skill {
+                font-size: rem(26px);
+                line-height: rem(48px);
+            }
+            .contact {
+                font-size: rem(20px);
+                line-height: rem(32px);
+                font-weight: 500;
+                a {
+                    color: #a9d6ff;
+                    text-decoration: none;
+                    &:hover,
+                    &:focus {
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+
+        footer {
+            color: #4d4d4d;
+            background-color: #ffffff;
+        }
+    }
+}
+
+/* md-размер (<=991px) */
+@media (max-width: 991px) {
+    html {
+        min-height: 100%;
+        height: auto;
+    }
+    .esquimau {
+        padding: 30px;
+        text-align: center !important;
+    }
+    .content {
+        padding-left: 0px !important;
+        text-align: center;
+    }
+    .logo {
+        display: none !important;
+    }
+    .skill {
+        font-size: rem(20px) !important;
+        line-height: rem(36px) !important;
+    }
+    .contact {
+        font-size: rem(15px) !important;
+        line-height: rem(25px) !important;
+    }
+    footer {
+        text-align: center;
+    }
+}
+
+/* xs-размер (<=575px) */
+@media (max-width: 575px) {
+
+}
