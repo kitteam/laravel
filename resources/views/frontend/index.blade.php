@@ -15,9 +15,15 @@
                 <div class="container">
                 @if (Route::has('login'))
                     <nav class="u-flex u-justify-end">
-                        <a class="login" href="{{ route('cp.index') }}">
+                        @auth
+                        <a class="login active" href="{{ route('cp.index') }}">
                             <img src="/img/login.min.png" alt="Панель управления">
                         </a>
+                        @else
+                        <a class="login" href="{{ route('login') }}">
+                            <img src="/img/login.min.png" alt="Авторизация">
+                        </a>
+                        @endauth
                     </nav>
                 @endif
                 </div>

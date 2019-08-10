@@ -41,7 +41,10 @@ html {
                 .login {
                     display: inline-flex;
                     border-radius: 50%;
-                    border: 2px solid #00ff00;
+                    border: 2px solid transparent;
+                    &.active {
+                        border: 2px solid #00ff00;
+                    }
                     &:hover {
                         border: 2px solid transparent;
                     }
