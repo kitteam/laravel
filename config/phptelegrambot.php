@@ -14,7 +14,7 @@ return [
      */
     'database' => [
         'enabled'    => true,
-        'connection' => env('DB_CONNECTION', 'mysql'),
+        'connection' => env('DB_CONNECTION_TELEGRAM', 'telegram'),
     ],
 
     'commands' => [
