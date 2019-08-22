@@ -30,6 +30,7 @@ Route::group(['prefix' => 'cp'], function () {
     Route::get('hosting/{id}', 'ControlPanel\HostingController@vesta');
 
     Route::any('account', 'ControlPanel\AccountController@info')->name('cp.account.info');
+    Route::any('account/edit', 'ControlPanel\AccountController@edit')->name('cp.account.edit');
 });
 
 Route::group(['prefix' => 'mc'], function () {
@@ -48,8 +49,4 @@ Route::group(['prefix' => 'mc'], function () {
 Route::group(['prefix' => 'callback'], function () {
     Route::any('tele2', 'Telephony\WebhookController@handle');
     Route::any('telegram', 'Telegram\WebhookController@handle');
-
-    Route::get('update', function () {
-        return Artisan::call('cover_photo:upload', []);
-    });
 });
