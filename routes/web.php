@@ -44,7 +44,12 @@ Route::group(['prefix' => 'mc'], function () {
     Route::get('cost', 'MissionControl\CostController@tld')->name('mc.cost.tld');
 
     Route::get('bot/runa', 'MissionControl\BotController@runa')->name('mc.bot.runa');
+
+    Route::get('seo/shortlink', 'MissionControl\ShortlinkController@index')->name('mc.seo.shortlink');
+    Route::get('seo/shortlink/add', 'MissionControl\ShortlinkController@add')->name('mc.seo.shortlink.add');
 });
+
+Route::get('/go/{shortlink}', 'MissionControl\ShortlinkController@link');
 
 Route::group(['prefix' => 'callback'], function () {
     Route::any('tele2', 'Telephony\WebhookController@handle');

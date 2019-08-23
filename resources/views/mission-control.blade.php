@@ -49,6 +49,17 @@
         </ul>
         @endif
 
+        @if (Route::has('mc.seo.shortlink'))
+        <h4 class="c-sidebar__title">SEO</h4>
+        <ul class="c-sidebar__list">
+            <li class="c-sidebar__item">
+                <a class="c-sidebar__link {{ route::is('mc.seo.shortlink') ? 'is-active' : '' }}"
+                    href="{{ route('mc.seo.shortlink') }}"><i class="fa u-mr-xsmall"></i>Короткие ссылки
+                </a>
+            </li>
+        </ul>
+        @endif
+
         @if (in_array(Auth::user()->id, [1,2,3]))
         <div class="c-sidebar__footer">
             <a href="{{ route('cp.index') }}" class="c-sidebar__footer-link" title="Панель управления">Панель</a>
