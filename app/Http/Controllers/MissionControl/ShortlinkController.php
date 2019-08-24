@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Shortlink;
 
+use PhpTelegramBot\Laravel\PhpTelegramBotContract;
+use Longman\TelegramBot\Request as TelegramBotRequest;
+
 class ShortlinkController extends Controller
 {
     /**
@@ -15,7 +18,8 @@ class ShortlinkController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('admin');
+        $this->middleware('auth')->only(['index', 'add', 'edit', 'delete']);
+        $this->middleware('web')->only('link');
     }
 
     /**
@@ -35,19 +39,41 @@ class ShortlinkController extends Controller
             $data['shortlink'] = str_random(8);
             $shortlink->create($data);
         }
-        if ('GET' === $request->method()) {
-            $data = $request->query();
-            $data['shortlink'] = str_random(8);
-            $shortlink->create($data);
-        }
-        //return view('mc.shortlink', ['collections' => $collections->all()]);
+        return view('mc.shortlink', ['collections' =>  $shortlink->all()]);
     }
 
-    public function link($shortlink, Shortlink $instance)
+    public function edit($id, Request $request, Shortlink $shortlink)
+    {
+        if ($shortlink = $shortlink->find($id)) {
+            if ('POST' === $request->method()) {
+                $data = $request->post();
+                $shortlink->update($data);
+                return view('mc.shortlink', ['collections' => $shortlink->all()]);
+            }
+            return view('mc.shortlink-modal', ['collection' => $shortlink]);
+        }
+    }
+
+    public function delete($id, Request $request, Shortlink $shortlink)
+    {
+        if ($item = $shortlink->find($id)) {
+            $item->delete();
+        }
+        return view('mc.shortlink', ['collections' =>  $shortlink->all()]);
+    }
+
+    public function link($shortlink, Shortlink $instance, PhpTelegramBotContract $telegram, Request $request)
     {
         $url = 'https://www.kit.team';
         if ($shortlink = $instance->where('shortlink', $shortlink)->first()) {
             $url = $shortlink->url;
+
+            if ($referer = $request->server('HTTP_REFERER')) {
+                TelegramBotRequest::sendMessage([
+                    'chat_id' => env('PHP_TELEGRAM_CHAT_ID'),
+                    'text'    => 'Гау-у-у. Переход по короткой ссылке c адреса '. $referer,
+                ]);
+            }
         }
         return redirect($url);
     }

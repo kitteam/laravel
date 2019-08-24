@@ -61,4 +61,14 @@ $(function() {
             autoHide: true
         });
     }
+
+    if($('[data-toggle="modal"]').length) {
+        $('[data-toggle="modal"]').each(function (i, e) {
+            if ($(e).attr('data-source')) {
+                $(e).on('click', function(e) {
+                    $( $(this).attr('data-target') ).find('.c-modal__content').load( $(this).attr('data-source') );
+                });
+            }
+        });
+    }
 });

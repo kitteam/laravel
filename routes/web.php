@@ -46,7 +46,9 @@ Route::group(['prefix' => 'mc'], function () {
     Route::get('bot/runa', 'MissionControl\BotController@runa')->name('mc.bot.runa');
 
     Route::get('seo/shortlink', 'MissionControl\ShortlinkController@index')->name('mc.seo.shortlink');
-    Route::get('seo/shortlink/add', 'MissionControl\ShortlinkController@add')->name('mc.seo.shortlink.add');
+    Route::post('seo/shortlink/add', 'MissionControl\ShortlinkController@add')->name('mc.seo.shortlink.add');
+    Route::any('seo/shortlink/edit/{id}', 'MissionControl\ShortlinkController@edit')->name('mc.seo.shortlink.edit');
+    Route::get('seo/shortlink/delete/{id}', 'MissionControl\ShortlinkController@delete')->name('mc.seo.shortlink.delete');
 });
 
 Route::get('/go/{shortlink}', 'MissionControl\ShortlinkController@link');
