@@ -36,7 +36,7 @@
                         && $expiration = $collection->domain()->select('expiration_at')->orderBy('expiration_at', 'asc')->first())
                         @if (date('Y-m-d H:i:s', time()) > $expiration->expiration_at)
                         <small class="u-text-danger u-mr-small">
-                        @elseif (date('Y-m-d H:i:s', time()) > $expiration->expiration_at->add('2 month'))
+                        @elseif (date('Y-m-d H:i:s', time()) > $expiration->expiration_at->add('-2 month'))
                         <small class="u-color-warning u-mr-small">
                         @else
                         <small class="u-text-mute u-mr-small">
@@ -48,7 +48,7 @@
                         && $expiration = $collection->hosting()->select('expiration_at')->orderBy('expiration_at', 'asc')->first())
                         @if (date('Y-m-d H:i:s', time()) > $expiration->expiration_at)
                         <small class="u-text-danger u-mr-small">
-                        @elseif (date('Y-m-d H:i:s', time()) > $expiration->expiration_at->add('2 month'))
+                        @elseif (date('Y-m-d H:i:s', time()) > $expiration->expiration_at->add('-2 month'))
                         <small class="u-color-warning u-mr-small">
                         @else
                         <small class="u-text-mute u-mr-small">

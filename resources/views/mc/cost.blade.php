@@ -58,7 +58,7 @@
                 <td class="c-table__cell u-wrap">
                     {{ $collection->our_reg_price }} руб.
                 @if (($diff = $collection->our_reg_price - $collection->reg_price) > 0)
-                    <small class="u-block u-text-success">+{{ $diff }}</small>
+                    <small class="u-block u-text-success">+{{ $diff }} руб.</small>
                 @endif
                 </td>
                 <td class="c-table__cell u-wrap">
@@ -68,7 +68,7 @@
                 <td class="c-table__cell u-wrap">
                     {{ $collection->our_renew_price }} руб.
                 @if (($diff = $collection->our_renew_price - $collection->renew_price) > 0)
-                    <small class="u-block u-text-success">+{{ $diff }}</small>
+                    <small class="u-block u-text-success">+{{ $diff }} руб.</small>
                 @endif
                 </td>
             </tr>
