@@ -47,7 +47,9 @@
                         </a>
                         <div class="c-dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="dropdwonMenuBoard{{ $collection->id }}">
                             <a href="{{ route('mc.seo.shortlink.edit', $collection->id) }}" id="edit" class="c-dropdown__item" data-toggle="modal" data-target="#modal2" data-source="{{ route('mc.seo.shortlink.edit', $collection->id) }}">Изменение</a>
+                            {{--
                             <a href="{{ route('mc.seo.shortlink.delete', $collection->id) }}" class="c-dropdown__item u-text-danger">Удаление</a>
+                            --}}
                         </div>
                     </div>
                 </td>

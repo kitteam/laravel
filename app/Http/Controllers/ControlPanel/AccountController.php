@@ -67,6 +67,6 @@ class AccountController extends Controller
             }
         }
 
-        return view('cp.account', ['collection' => $user]);
+        return view('cp.account.edit', ['collection' => $user]);
     }
 }

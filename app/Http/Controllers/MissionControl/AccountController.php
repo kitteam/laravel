@@ -26,9 +26,9 @@ class AccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function list()
+    public function list(User $user)
     {
-        $accounts = User::all();
+        $accounts = $user->all();
         return view('mc.account', ['collections' => $accounts ?: [] ]);
     }
 

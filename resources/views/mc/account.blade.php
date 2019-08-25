@@ -31,7 +31,31 @@
                 </td>
 
                 <td class="c-table__cell u-wrap">
-                    {{ $collection->name ? $collection->name .' '. $collection->surname : '—' }}
+                    <div>{{ $collection->name ? $collection->name .' '. $collection->surname : '—' }}</div>
+                    @if (($count = $collection->domain()->count())
+                        && $expiration = $collection->domain()->select('expiration_at')->orderBy('expiration_at', 'asc')->first())
+                        @if (date('Y-m-d H:i:s', time()) > $expiration->expiration_at)
+                        <small class="u-text-danger u-mr-small">
+                        @elseif (date('Y-m-d H:i:s', time()) > $expiration->expiration_at->add('2 month'))
+                        <small class="u-color-warning u-mr-small">
+                        @else
+                        <small class="u-text-mute u-mr-small">
+                        @endif
+                            {{ $count }} {{ trans_choice('домен|домена|доменов', $count) }}
+                        </small>
+                    @endif
+                    @if (($count = $collection->hosting()->count())
+                        && $expiration = $collection->hosting()->select('expiration_at')->orderBy('expiration_at', 'asc')->first())
+                        @if (date('Y-m-d H:i:s', time()) > $expiration->expiration_at)
+                        <small class="u-text-danger u-mr-small">
+                        @elseif (date('Y-m-d H:i:s', time()) > $expiration->expiration_at->add('2 month'))
+                        <small class="u-color-warning u-mr-small">
+                        @else
+                        <small class="u-text-mute u-mr-small">
+                        @endif
+                            {{ $count }} {{ trans_choice('аккаунт|аккаунта|аккаунтов', $count) }}
+                        </small>
+                    @endif
                 </td>
 
                 <td class="c-table__cell">
