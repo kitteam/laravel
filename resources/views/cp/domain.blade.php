@@ -28,7 +28,10 @@
         @foreach ($collections as $collection)
             <tr class="c-table__row">
                 <td class="c-table__cell">
-                    <a href="/{{ Request::path() }}/{{ $collection->id }}" title="Управление">{{ $collection->domain }}</a>
+                    {{--
+                        <a href="/{{ Request::path() }}/{{ $collection->id }}" title="Управление">{{ $collection->domain }}</a>
+                    --}}
+                    {{ $collection->domain }}
                     <small class="u-block u-text-mute">{{ $collection->provider }}</small>
                 </td>
 
@@ -88,6 +91,7 @@
                 </td>
 
                 <td class="c-table__cell u-text-right">
+                {{--
                     <div class="c-board__actions dropdown">
                         <a class="dropdown-toggle" href="#" id="dropdwonMenuBoard{{ $collection->id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img class="u-width-initial" src="/img/icon-dots.svg" alt="Управление">
@@ -96,6 +100,7 @@
                             <a href="/{{ Request::path() }}/{{ $collection->id }}" class="c-dropdown__item">Управление</a>
                         </div>
                     </div>
+                --}}
                 </td>
             </tr>
         @endforeach

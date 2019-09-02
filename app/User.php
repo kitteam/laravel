@@ -68,4 +68,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\UserHosting');
     }
+
+    public function getBalanceAttribute()
+    {
+        return $this->hasMany('App\UserOrder')->sum('amount');
+    }
 }

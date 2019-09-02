@@ -59,6 +59,59 @@
 
         <h2 class="c-navbar__title u-mr-auto">@yield('page.title', 'Панель управления')</h2>
 
+        <div class="c-dropdown dropdown u-mr-medium u-ml-small u-hidden-down@mobile">
+            <a class="dropdown-toggle" href="#" id="dropdownMenuAlerts" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-wallet u-mr-xsmall"></i>
+                {{ money_format('%.2n', Auth::user()->balance / 100) }} ₽
+            </a>
+
+            <div class="c-dropdown__menu c-dropdown__menu--large dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuAlerts">
+                <a href="#" class="c-dropdown__item dropdown-item o-media">
+                    <span class="o-media__img u-mr-xsmall">
+                        <span class="c-avatar c-avatar--xsmall">
+                            <span class="c-avatar__img u-bg-success u-flex u-justify-center u-align-items-center">
+                                <i class="fa fa-check u-text-large u-color-white"></i>
+                            </span>
+                        </span>
+
+                    </span>
+                    <div class="o-media__body">
+                        <h6 class="u-mb-zero">Completed a task</h6>
+                        <p class="u-text-mute">You have recieved a mention on twitter, check it out!</p>
+                    </div>
+                </a>
+
+                <a href="#" class="c-dropdown__item dropdown-item o-media">
+                    <span class="o-media__img u-mr-xsmall">
+                        <span class="c-avatar c-avatar--xsmall">
+                            <span class="c-avatar__img u-bg-fancy u-flex u-justify-center u-align-items-center">
+                                <i class="fa fa-calendar u-text-large u-color-white"></i>
+                            </span>
+                        </span>
+
+                    </span>
+                    <div class="o-media__body">
+                        <h6 class="u-mb-zero">Пополнить баланс</h6>
+                        <p class="u-text-mute">You have recieved a mention on twitter, check it out!</p>
+                    </div>
+                </a>
+                <a href="#" class="c-dropdown__item dropdown-item o-media">
+                    <span class="o-media__img u-mr-xsmall">
+                        <span class="c-avatar c-avatar--xsmall">
+                            <span class="c-avatar__img u-bg-primary u-flex u-justify-center u-align-items-center">
+                                <i class="fa fa-info u-text-large u-color-white"></i>
+                            </span>
+                        </span>
+
+                    </span>
+                    <div class="o-media__body">
+                        <h6 class="u-mb-zero">Someone mentioned you</h6>
+                        <p class="u-text-mute">You have recieved a mention on twitter, check it out!</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
         <div class="c-dropdown dropdown">
             <a  class="c-avatar c-avatar--xsmall has-dropdown dropdown-toggle" href="#" id="dropdwonMenuAvatar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img class="c-avatar__img" src="https://ui-avatars.com/api/?name={{ Auth::user()->name .'+'. Auth::user()->surname }}&background=2ea1f8&color=fff&rounded=true" alt="{{ Auth::user()->name ?? Auth::user()->email }}">

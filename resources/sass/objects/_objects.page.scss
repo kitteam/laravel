@@ -58,6 +58,7 @@
 
 .o-page__content {
 	margin-left: 250px; /* [1] */
+	height: 100%;
 	overflow: hidden;
 
 	@include respond-to($breakpoint-desktop) {
@@ -70,10 +71,10 @@
 }
 
 
-/** 
+/**
  * Page Card
  *
- * A centered page card is used when you want the card to be centered and 
+ * A centered page card is used when you want the card to be centered and
  * provide a little space at the top & bottom e.g. login, 404 pages.
  */
 
@@ -87,7 +88,7 @@
 }
 
 
-/** 
+/**
  * Horizontal Page Card
  *
  * Used with login-2 page.
