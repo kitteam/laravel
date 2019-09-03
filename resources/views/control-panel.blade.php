@@ -69,21 +69,6 @@
                 <a href="#" class="c-dropdown__item dropdown-item o-media">
                     <span class="o-media__img u-mr-xsmall">
                         <span class="c-avatar c-avatar--xsmall">
-                            <span class="c-avatar__img u-bg-success u-flex u-justify-center u-align-items-center">
-                                <i class="fa fa-check u-text-large u-color-white"></i>
-                            </span>
-                        </span>
-
-                    </span>
-                    <div class="o-media__body">
-                        <h6 class="u-mb-zero">Completed a task</h6>
-                        <p class="u-text-mute">You have recieved a mention on twitter, check it out!</p>
-                    </div>
-                </a>
-
-                <a href="#" class="c-dropdown__item dropdown-item o-media">
-                    <span class="o-media__img u-mr-xsmall">
-                        <span class="c-avatar c-avatar--xsmall">
                             <span class="c-avatar__img u-bg-fancy u-flex u-justify-center u-align-items-center">
                                 <i class="fa fa-calendar u-text-large u-color-white"></i>
                             </span>
@@ -91,22 +76,8 @@
 
                     </span>
                     <div class="o-media__body">
-                        <h6 class="u-mb-zero">Пополнить баланс</h6>
-                        <p class="u-text-mute">You have recieved a mention on twitter, check it out!</p>
-                    </div>
-                </a>
-                <a href="#" class="c-dropdown__item dropdown-item o-media">
-                    <span class="o-media__img u-mr-xsmall">
-                        <span class="c-avatar c-avatar--xsmall">
-                            <span class="c-avatar__img u-bg-primary u-flex u-justify-center u-align-items-center">
-                                <i class="fa fa-info u-text-large u-color-white"></i>
-                            </span>
-                        </span>
-
-                    </span>
-                    <div class="o-media__body">
-                        <h6 class="u-mb-zero">Someone mentioned you</h6>
-                        <p class="u-text-mute">You have recieved a mention on twitter, check it out!</p>
+                        <h6 class="u-mb-zero">История операций</h6>
+                        <p class="u-text-mute">Информация о движении средств на лицевом счете</p>
                     </div>
                 </a>
             </div>
