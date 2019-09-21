@@ -32,7 +32,7 @@
         <ul class="c-sidebar__list">
             <li class="c-sidebar__item">
                 <a class="c-sidebar__link {{ route::is('cp.hosting.*') ? 'is-active' : '' }}"
-                    href="{{ route('cp.hosting.list') }}"><i class="fa fa-list-alt u-mr-xsmall"></i>Список услуг
+                    href="{{ route('cp.hosting.list') }}"><i class="fa fa-list-alt u-mr-xsmall"></i>Список аккаунтов
                 </a>
             </li>
         </ul>
