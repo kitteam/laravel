@@ -30,7 +30,12 @@
             <tr class="c-table__row">
                 <td class="c-table__cell">
                     {{ $collection->hosting->name }}
-                    <small class="u-block u-text-mute">{{ $data['WEB_DOMAINS'] }} {{ trans_choice('сайт|сайта|сайтов', $data['WEB_DOMAINS']) }} / {{ is_numeric($data['DISK_QUOTA']) ? round($data['DISK_QUOTA'] / 1024, 2) : '∞' }} Gb</small>
+                    <small class="u-block u-text-mute">
+                        {{ $data['WEB_DOMAINS'] == 'unlimited' ? '∞' : $data['WEB_DOMAINS'] }} 
+                        {{ trans_choice('сайт|сайта|сайтов', (int) $data['WEB_DOMAINS']) }}
+                        /
+                        {{ is_numeric($data['DISK_QUOTA']) ? round($data['DISK_QUOTA'] / 1024, 2) : '∞' }} Gb
+                    </small>
                 </td>
 
                 <td class="c-table__cell">
@@ -86,6 +91,34 @@
                         </div>
                     </div>
                 </td>
+            </tr>
+            @else
+            <tr class="c-table__row">
+                <td class="c-table__cell">
+                    {{ $collection->hosting->name }}
+                    <small class="u-block u-text-mute"></small>
+                </td>
+
+                <td class="c-table__cell">
+                    <div class="o-media">
+                        <div class="o-media__body">
+                            {{ $collection->account }}<span class="u-text-mute">@</span><span class="u-text-mute">{{ $collection->server }}</span>
+                            <small class="u-block u-text-mute"></small>
+                        </div>
+                    </div>
+                </td>
+
+                <td class="c-table__cell"></td>
+
+                <td class="c-table__cell">
+                    {{ $collection->expiration_at ? $collection->expiration_at->format('d.m.Y') : '—' }}
+                </td>
+
+                <td class="c-table__cell">
+                    <i class="fa fa-circle u-text-mute u-mr-xsmall"></i>Неопределен
+                </td>
+
+                <td class="c-table__cell u-text-right"></td>
             </tr>
             @endif
         @endforeach
