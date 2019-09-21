@@ -44,6 +44,9 @@ class WebhookController extends Controller
 
     protected function condition($text)
     {
+        if ($message = $this->food($text)) {
+            return $message;
+        }
         return 'Я не поняла';
     }
 
@@ -51,7 +54,32 @@ class WebhookController extends Controller
     {
         TelegramBotRequest::sendMessage($message);
     }
+
+    protected function food($text)
+    {
+        $foods = ['🥐','🥯','🍞','🥖','🥨','🧀','🥞','🥓','🥩','🍗','🍖',
+            '🦴','🌭','🍔','🍕','🥪','🥗','🍝','🍜','🍲','🍛','🍣','🥟',
+            '🍤','🍦','🥧','🧁','🍰','🎂','🍮','🍭','🍬','🍫','🍩','🍪','🌰'];
+
+        $counts = [];
+        foreach ($foods as $food) {
+            $counts[] = preg_match_all('/'. $food .'/', $text, $matches);
+        }
+
+        if ($counts = array_sum($counts)) {
+            $text = array_fill(0, $counts, 'мням');
+            $text = join(', ', $text) .' ...';
+
+            $counts = Cache::pull('food') + $counts;
+            if ($counts > 10) {
+                $text = $text . '💩';
+            }
+            Cache::forever('food', $counts);
+            return $text;
+        }
+    }
 }
+
 
 /*
 $input = json_decode($telegram->getCustomInput(), true);
