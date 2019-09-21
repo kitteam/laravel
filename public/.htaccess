@@ -4,6 +4,13 @@
     </IfModule>
 
     RewriteEngine On
+    # Redirect WWWW
+    RewriteCond %{HTTP_HOST} ^([^www].*)$
+    RewriteRule ^(.*)$ https://www.%1/$1 [L,R=301]
+
+    # Redirect HTTPS
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
