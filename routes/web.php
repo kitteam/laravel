@@ -56,9 +56,10 @@ Route::get('/go/{shortlink}', 'MissionControl\ShortlinkController@link');
 Route::group(['prefix' => 'callback'], function () {
     Route::any('tele2', 'Telephony\WebhookController@handle');
     Route::any('telegram', 'Telegram\WebhookController@handle');
+    Route::any('vk', 'Vk\WebhookController@handle');
 });
 
 Route::get('/test', function (TerminalFa $terminal) {
-    print_r($terminal::getCurrentShift());
+    print_r($terminal::getStatus());
     die();
 });
