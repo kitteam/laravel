@@ -1,22 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Telephony;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+//use Illuminate\Http\Request;
 use PhpTelegramBot\Laravel\PhpTelegramBotContract;
 use Longman\TelegramBot\Request as TelegramBotRequest;
+
 use Request;
 use Tele2;
 use Cache;
 
-class WebhookController extends Controller
+class CallbackController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
-
-    public function handle(Request $request, Tele2 $tele2, PhpTelegramBotContract $telegram)
+    public function tele2(Request $request, Tele2 $tele2, PhpTelegramBotContract $telegram)
     {
         if (($key = $request::get('key')) && $key == env('TELE2_CALLBACK_KEY')) {
             $calls = [];
