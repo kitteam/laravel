@@ -21,6 +21,10 @@ class EventServiceProvider extends ServiceProvider
          'App\Events\Auth\UserConfirmation' => [
              'App\Listeners\Auth\SendConfirmationNotification',
          ],
+         // Telephony
+         'App\Events\Callback\IncomingCall' => [
+             'App\Listeners\Callback\SendIncomingСallNotification',
+         ],
      ];
 
      protected $subscribe = [
